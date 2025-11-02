@@ -2,6 +2,7 @@ from dataclasses import dataclass, field
 from typing import List
 import os
 
+DEBUG = True
 #Definición de una clase partición
 
 @dataclass
@@ -48,6 +49,13 @@ def cargar_lista_procesos():
     ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)),"procesos.csv")
     with open(ruta, "r", encoding="utf-8") as f:
         procesos = f.read()
-    print(str(procesos))
-
+    if DEBUG == True:
+        print(str(procesos))
+    procesos = procesos.split("*")
+    if DEBUG == True:
+        print(str(procesos))
+    for i in range (len(procesos)):
+        elemento = procesos[i].split("-")
+        if DEBUG == True: print(elemento)
+        ColaProcesos.append(elemento)
 cargar_lista_procesos()

@@ -17,7 +17,7 @@ class Particion:
     fragmentacion: int
     ocupado: bool
 
-#Definciion de una clase proceso
+#Definición de una clase proceso
 
 @dataclass
 class Proceso:
@@ -39,8 +39,10 @@ arreglo_particiones: List[Particion] = [
     Particion(id="Trabajos Medianos", dir=351, espacio=150, id_proceso="", fragmentacion=0, ocupado=False),
     Particion(id="Trabajos Pequeños", dir=501, espacio=50, id_proceso="", fragmentacion=0, ocupado=False)
 ]
+
 #La idea es que los procesos ingresen por default a la cola de procesos,
-#cuando se cumpla su arribo pasen a la cola de listo y se evaluen en base al metodo BestFit o el Algoritmo SRTF, se considera finalizado si t_memoria == irrupcion.
+#cuando se cumpla su arribo pasen a la cola de listo y se evaluen en base al metodo BestFit o el Algoritmo SRTF, 
+#se considera finalizado si t_memoria == irrupcion.
 
 ColaProcesos=[]
 ColaListo=[]
@@ -50,7 +52,7 @@ ColaFinalizado=[]
 Procesos = 0
 
 
-#Funcion encargada de cargar el contenido del archivo en la variable procesos
+#Función encargada de cargar el contenido del archivo en la variable procesos
 def cargar_lista_procesos():
     ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "procesos.csv")
     with open(ruta, "r", encoding="utf-8") as f:
@@ -106,26 +108,106 @@ def best_fit(proceso):
     return False
 
 
-#Bucle principal de carga en memoria
-while gradoMultiProgr < LIMITE_MULTIPROG and ColaProcesos:
-    elemento = ColaProcesos.pop(0)
-    if DEBUG:
-        print(f"Intentando asignar proceso: {elemento.nombre}")
-    asignado = best_fit(elemento)
-    if asignado:
-        ColaListo.append(elemento)
-        gradoMultiProgr += 1
-        if DEBUG:
-            print(f"→ Proceso {elemento.nombre} asignado a partición {elemento.particion_asignada}")
-    else:
-        ColaSuspendido.append(elemento)
-        if DEBUG:
-            print(f"→ Proceso {elemento.nombre} suspendido (sin espacio disponible)")
+#Liberar partición cuando un proceso termina
+def liberar_particion(proceso):
+    for part in arreglo_particiones:
+        if part.id == proceso.particion_asignada:
+            part.ocupado = False
+            part.id_proceso = ""
+            part.fragmentacion = 0
+            if DEBUG:
+                print(f"Partición {part.id} liberada por {proceso.nombre}")
 
-print("\n=== Estado final de la simulación ===")
-print("Grado de multiprogramación actual:", gradoMultiProgr)
-print("Cola de listos:", [p.nombre for p in ColaListo])
-print("Cola suspendidos:", [p.nombre for p in ColaSuspendido])
-print("Particiones ocupadas:")
-for p in arreglo_particiones:
-    print(f"- {p.id}: {'Ocupada' if p.ocupado else 'Libre'} (Proc: {p.id_proceso}, Frag: {p.fragmentacion})")
+
+#Método SRTF (Shortest Remaining Time First)
+def obtener_proceso_srtf():
+    if not ColaListo:
+        return None
+    # Calcula el tiempo restante de cada proceso y selecciona el menor
+    return min(ColaListo, key=lambda p: p.irrupcion - p.t_memoria)
+
+
+# --- SIMULACIÓN DEL ARRIBO DE PROCESOS Y CARGA A MEMORIA ---
+
+tiempo_actual = 0
+
+# El bucle controla el paso del tiempo del sistema
+while ColaProcesos or ColaSuspendido or ColaListo:
+    if DEBUG:
+        print(f"\n⏱ Tiempo actual: {tiempo_actual}")
+
+    #Llegada de procesos nuevos al sistema
+    for p in list(ColaProcesos):
+        if p.arribo <= tiempo_actual:
+            ColaProcesos.remove(p)
+            if DEBUG:
+                print(f"→ Proceso {p.nombre} ha arribado al sistema (t={tiempo_actual})")
+
+            # Intentar asignar directamente si hay espacio y multiprogramación lo permite
+            if gradoMultiProgr < LIMITE_MULTIPROG:
+                asignado = best_fit(p)
+                if asignado:
+                    ColaListo.append(p)
+                    gradoMultiProgr += 1
+                    if DEBUG:
+                        print(f"   Asignado a partición {p.particion_asignada}")
+                else:
+                    ColaSuspendido.append(p)
+                    p.estado = "suspendido"
+                    if DEBUG:
+                        print(f"   Suspendido: sin espacio disponible")
+            else:
+                ColaSuspendido.append(p)
+                p.estado = "suspendido"
+                if DEBUG:
+                    print(f"   Suspendido: límite multiprogramación alcanzado")
+
+    #Reintentar procesos suspendidos (por si se liberó espacio)
+    for p in list(ColaSuspendido):
+        if gradoMultiProgr < LIMITE_MULTIPROG:
+            asignado = best_fit(p)
+            if asignado:
+                ColaSuspendido.remove(p)
+                ColaListo.append(p)
+                gradoMultiProgr += 1
+                p.estado = "listo"
+                if DEBUG:
+                    print(f"   {p.nombre} reasignado desde suspendido a {p.particion_asignada}")
+
+    #Ejecutar proceso según SRTF
+    proceso_actual = obtener_proceso_srtf()
+
+    if proceso_actual:
+        proceso_actual.estado = "ejecutando"
+        proceso_actual.t_memoria += 1  # simula un ciclo de CPU
+        if DEBUG:
+            print(f"Ejecutando {proceso_actual.nombre} ({proceso_actual.t_memoria}/{proceso_actual.irrupcion}) en {proceso_actual.particion_asignada}")
+
+        # Si termina su ráfaga de CPU
+        if proceso_actual.t_memoria >= proceso_actual.irrupcion:
+            ColaListo.remove(proceso_actual)
+            ColaFinalizado.append(proceso_actual)
+            liberar_particion(proceso_actual)
+            gradoMultiProgr -= 1
+            proceso_actual.estado = "finalizado"
+            if DEBUG:
+                print(f"Proceso {proceso_actual.nombre} finalizado (t={tiempo_actual})")
+    else:
+        if DEBUG:
+            print("No hay procesos listos para ejecutar")
+
+    #Avanzar el tiempo del sistema
+    tiempo_actual += 1
+
+
+# --- Estado final de la simulación ---
+if DEBUG:
+    print("\n=== Estado final de la simulación ===")
+    print("Tiempo total:", tiempo_actual)
+    print("Grado de multiprogramación final:", gradoMultiProgr)
+    print("Cola de listos:", [p.nombre for p in ColaListo])
+    print("Cola suspendidos:", [p.nombre for p in ColaSuspendido])
+    print("Cola finalizados:", [p.nombre for p in ColaFinalizado])
+    print("Particiones ocupadas:")
+    for p in arreglo_particiones:
+        print(f"- {p.id}: {'Ocupada' if p.ocupado else 'Libre'} (Proc: {p.id_proceso}, Frag: {p.fragmentacion})")

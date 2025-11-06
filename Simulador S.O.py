@@ -14,7 +14,7 @@ class Particion:
     dir: int
     espacio: int
     id_proceso: str
-    fragmentacion: int
+    fragmentacion = 0
     ocupado: bool
 
 #Definición de una clase proceso
@@ -26,7 +26,7 @@ class Proceso:
     tamano: int
     arribo: int
     irrupcion: int
-    t_memoria: int
+    t_memoria = 0  #el archivo csv no debe tener tiempo en memoria, eso va aumentando o disminuyendo segun como lo tratemos xd.
     estado: str = "nuevo"
     particion_asignada: str = None
 
@@ -34,10 +34,10 @@ class Proceso:
 #Cuando llegue un proceso en fragmentacion=espacio-tamaño del proceso
 
 arreglo_particiones: List[Particion] = [
-    Particion(id="Sistema Operativo", dir=0, espacio=100, id_proceso="", fragmentacion=0, ocupado=True), 
-    Particion(id="Trabajos Grandes", dir=100, espacio=250, id_proceso="", fragmentacion=0, ocupado=False),
-    Particion(id="Trabajos Medianos", dir=351, espacio=150, id_proceso="", fragmentacion=0, ocupado=False),
-    Particion(id="Trabajos Pequeños", dir=501, espacio=50, id_proceso="", fragmentacion=0, ocupado=False)
+    Particion(id="Sistema Operativo", dir=0, espacio=100, id_proceso="", ocupado=True), 
+    Particion(id="Trabajos Grandes", dir=100, espacio=250, id_proceso="", ocupado=False),
+    Particion(id="Trabajos Medianos", dir=351, espacio=150, id_proceso="", ocupado=False),
+    Particion(id="Trabajos Pequeños", dir=501, espacio=50, id_proceso="", ocupado=False)
 ]
 
 #La idea es que los procesos ingresen por default a la cola de procesos,
@@ -78,8 +78,7 @@ def cargar_lista_procesos():
                 tamano=int(elemento[2]),
                 arribo=int(elemento[3]),
                 irrupcion=int(elemento[4]),
-                t_memoria=int(elemento[5])
-            )
+            ) #elimine el elemento 5 por lo del tiempo en memoria no se le pasa
         )
 
 cargar_lista_procesos()
@@ -138,7 +137,7 @@ while ColaProcesos or ColaSuspendido or ColaListo:
 
     #Llegada de procesos nuevos al sistema
     for p in list(ColaProcesos):
-        if p.arribo <= tiempo_actual:
+        if p.arribo == tiempo_actual: #el arribo debe ser solo cuando el tiempo de arribo es igual al tiempo actual del SO
             ColaProcesos.remove(p)
             if DEBUG:
                 print(f"→ Proceso {p.nombre} ha arribado al sistema (t={tiempo_actual})")
@@ -184,7 +183,7 @@ while ColaProcesos or ColaSuspendido or ColaListo:
             print(f"Ejecutando {proceso_actual.nombre} ({proceso_actual.t_memoria}/{proceso_actual.irrupcion}) en {proceso_actual.particion_asignada}")
 
         # Si termina su ráfaga de CPU
-        if proceso_actual.t_memoria >= proceso_actual.irrupcion:
+        if proceso_actual.t_memoria >= proceso_actual.irrupcion: #esto hiciste por si en algun caso desborda de onda el tiempo en memoria?
             ColaListo.remove(proceso_actual)
             ColaFinalizado.append(proceso_actual)
             liberar_particion(proceso_actual)

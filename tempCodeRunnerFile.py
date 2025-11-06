@@ -1,0 +1,1 @@
+#esto hiciste por si en algun caso desborda de onda el tiempo en memoria?

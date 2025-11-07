@@ -14,8 +14,8 @@ class Particion:
     dir: int
     espacio: int
     id_proceso: str
-    fragmentacion = 0
-    ocupado: bool
+    fragmentacion: int = 0
+    ocupado: bool = False
 
 #Definición de una clase proceso
 
@@ -26,7 +26,7 @@ class Proceso:
     tamano: int
     arribo: int
     irrupcion: int
-    t_memoria = 0  #el archivo csv no debe tener tiempo en memoria, eso va aumentando o disminuyendo segun como lo tratemos xd.
+    t_memoria: int = 0  #el archivo csv no debe tener tiempo en memoria, eso va aumentando o disminuyendo segun como lo tratemos xd.
     estado: str = "nuevo"
     particion_asignada: str = None
 
@@ -34,7 +34,7 @@ class Proceso:
 #Cuando llegue un proceso en fragmentacion=espacio-tamaño del proceso
 
 arreglo_particiones: List[Particion] = [
-    Particion(id="Sistema Operativo", dir=0, espacio=100, id_proceso="", ocupado=True), 
+    Particion(id="Sistema Operativo", dir=0, espacio=100, id_proceso="Sistema Operativo", ocupado=True), 
     Particion(id="Trabajos Grandes", dir=100, espacio=250, id_proceso="", ocupado=False),
     Particion(id="Trabajos Medianos", dir=351, espacio=150, id_proceso="", ocupado=False),
     Particion(id="Trabajos Pequeños", dir=501, espacio=50, id_proceso="", ocupado=False)
@@ -125,6 +125,20 @@ def obtener_proceso_srtf():
     # Calcula el tiempo restante de cada proceso y selecciona el menor
     return min(ColaListo, key=lambda p: p.irrupcion - p.t_memoria)
 
+#Mostrar colas con ENTER
+def Muestra_Colas(Listo, Suspendido, Finalizado, Part, Ejecucion=None):
+    print("Presione Enter para continuar...")
+    tecla = input()
+    if not tecla:
+        nombre_ejecucion = Ejecucion.nombre if Ejecucion else "Ninguno"    
+        print(f"Proceso en ejecucion:{nombre_ejecucion}") 
+        print("Cola de listos:", [p.nombre for p in Listo])
+        print("Cola suspendidos:", [p.nombre for p in Suspendido])
+        print("Cola finalizados:", [p.nombre for p in Finalizado])
+        print("Particiones ocupadas:")
+        for p in Part:
+            print(f"- {p.id}: {'Ocupada' if p.ocupado else 'Libre'} (Proc: {p.id_proceso}, Frag: {p.fragmentacion})")
+
 
 # --- SIMULACIÓN DEL ARRIBO DE PROCESOS Y CARGA A MEMORIA ---
 
@@ -137,7 +151,7 @@ while ColaProcesos or ColaSuspendido or ColaListo:
 
     #Llegada de procesos nuevos al sistema
     for p in list(ColaProcesos):
-        if p.arribo == tiempo_actual: #el arribo debe ser solo cuando el tiempo de arribo es igual al tiempo actual del SO
+        if p.arribo <= tiempo_actual: #el arribo debe ser solo cuando el tiempo de arribo es igual al tiempo actual del SO
             ColaProcesos.remove(p)
             if DEBUG:
                 print(f"→ Proceso {p.nombre} ha arribado al sistema (t={tiempo_actual})")
@@ -148,8 +162,10 @@ while ColaProcesos or ColaSuspendido or ColaListo:
                 if asignado:
                     ColaListo.append(p)
                     gradoMultiProgr += 1
+                    Muestra_Colas(ColaListo, ColaSuspendido, ColaFinalizado, arreglo_particiones, Ejecucion = proceso_actual)
                     if DEBUG:
                         print(f"   Asignado a partición {p.particion_asignada}")
+
                 else:
                     ColaSuspendido.append(p)
                     p.estado = "suspendido"
@@ -161,6 +177,10 @@ while ColaProcesos or ColaSuspendido or ColaListo:
                 if DEBUG:
                     print(f"   Suspendido: límite multiprogramación alcanzado")
 
+
+
+    
+                    
     #Reintentar procesos suspendidos (por si se liberó espacio)
     for p in list(ColaSuspendido):
         if gradoMultiProgr < LIMITE_MULTIPROG:
@@ -189,6 +209,7 @@ while ColaProcesos or ColaSuspendido or ColaListo:
             liberar_particion(proceso_actual)
             gradoMultiProgr -= 1
             proceso_actual.estado = "finalizado"
+            Muestra_Colas(ColaListo, ColaSuspendido, ColaFinalizado, arreglo_particiones, Ejecucion = proceso_actual)
             if DEBUG:
                 print(f"Proceso {proceso_actual.nombre} finalizado (t={tiempo_actual})")
     else:

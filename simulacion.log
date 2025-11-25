@@ -1,0 +1,200 @@
+2025-11-25 00:23:42,582 - INFO - Lista de procesos cargada: ['P1', 'P2', 'P3', 'P4']
+2025-11-25 00:23:42,582 - INFO - Tiempo actual: 0
+2025-11-25 00:23:42,582 - INFO - Llegada de proceso P1
+2025-11-25 00:23:42,582 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 10)
+2025-11-25 00:23:42,582 - INFO - Ejecutando P1 (1/5) en Trabajos Pequeños
+2025-11-25 00:23:42,582 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:42,582 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:42,582 - DEBUG - Partición Trabajos Medianos: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:42,583 - DEBUG - Partición Trabajos Pequeños: Ocupada, Proc: P1, Frag: 10
+2025-11-25 00:23:43,873 - INFO - Tiempo actual: 1
+2025-11-25 00:23:43,873 - INFO - Llegada de proceso P2
+2025-11-25 00:23:43,873 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 90)
+2025-11-25 00:23:43,873 - INFO - Ejecutando P1 (2/5) en Trabajos Pequeños
+2025-11-25 00:23:43,873 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:43,873 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:43,873 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P2, Frag: 90
+2025-11-25 00:23:43,873 - DEBUG - Partición Trabajos Pequeños: Ocupada, Proc: P1, Frag: 10
+2025-11-25 00:23:44,791 - INFO - Tiempo actual: 2
+2025-11-25 00:23:44,791 - INFO - Llegada de proceso P3
+2025-11-25 00:23:44,791 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 220)
+2025-11-25 00:23:44,791 - INFO - Ejecutando P1 (3/5) en Trabajos Pequeños
+2025-11-25 00:23:44,791 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:44,791 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P3, Frag: 220
+2025-11-25 00:23:44,791 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P2, Frag: 90
+2025-11-25 00:23:44,792 - DEBUG - Partición Trabajos Pequeños: Ocupada, Proc: P1, Frag: 10
+2025-11-25 00:23:45,271 - INFO - Tiempo actual: 3
+2025-11-25 00:23:45,271 - INFO - Llegada de proceso P4
+2025-11-25 00:23:45,272 - DEBUG - No se encontró partición para P4
+2025-11-25 00:23:45,272 - INFO - Reemplazo: expulsando P1 para alojar P4
+2025-11-25 00:23:45,272 - INFO - Partición Trabajos Pequeños liberada por P1
+2025-11-25 00:23:45,272 - DEBUG - No se encontró partición para P4
+2025-11-25 00:23:45,272 - INFO - Proceso P4 suspendido
+2025-11-25 00:23:45,272 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 10)
+2025-11-25 00:23:45,272 - INFO - Reasignado desde suspendido: P1
+2025-11-25 00:23:45,272 - DEBUG - No se encontró partición para P4
+2025-11-25 00:23:45,273 - INFO - Reemplazo: expulsando P1 para alojar P4
+2025-11-25 00:23:45,273 - INFO - Partición Trabajos Pequeños liberada por P1
+2025-11-25 00:23:45,273 - DEBUG - No se encontró partición para P4
+2025-11-25 00:23:45,273 - INFO - Proceso P4 suspendido
+2025-11-25 00:23:45,273 - INFO - Ejecutando P3 (1/4) en Trabajos Grandes
+2025-11-25 00:23:45,273 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:45,273 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P3, Frag: 220
+2025-11-25 00:23:45,273 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P2, Frag: 90
+2025-11-25 00:23:45,273 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:46,389 - INFO - Tiempo actual: 4
+2025-11-25 00:23:46,389 - DEBUG - No se encontró partición para P4
+2025-11-25 00:23:46,389 - INFO - Reemplazo: expulsando P2 para alojar P4
+2025-11-25 00:23:46,389 - INFO - Partición Trabajos Medianos liberada por P2
+2025-11-25 00:23:46,389 - INFO - Proceso P4 asignado a Trabajos Medianos (fragmentación 50)
+2025-11-25 00:23:46,389 - INFO - Reasignado desde suspendido: P4
+2025-11-25 00:23:46,389 - INFO - Ejecutando P3 (2/4) en Trabajos Grandes
+2025-11-25 00:23:46,390 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:46,390 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P3, Frag: 220
+2025-11-25 00:23:46,390 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:46,390 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:47,427 - INFO - Tiempo actual: 5
+2025-11-25 00:23:47,427 - INFO - Ejecutando P3 (3/4) en Trabajos Grandes
+2025-11-25 00:23:47,427 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:47,427 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P3, Frag: 220
+2025-11-25 00:23:47,427 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:47,427 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:47,987 - INFO - Tiempo actual: 6
+2025-11-25 00:23:47,987 - INFO - Ejecutando P3 (4/4) en Trabajos Grandes
+2025-11-25 00:23:47,987 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:47,987 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P3, Frag: 220
+2025-11-25 00:23:47,987 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:47,987 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:47,987 - INFO - Partición Trabajos Grandes liberada por P3
+2025-11-25 00:23:47,988 - INFO - Proceso P3 finalizado
+2025-11-25 00:23:49,384 - INFO - Tiempo actual: 7
+2025-11-25 00:23:49,384 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 10)
+2025-11-25 00:23:49,384 - INFO - Reasignado desde suspendido: P1
+2025-11-25 00:23:49,384 - INFO - Ejecutando P1 (4/5) en Trabajos Pequeños
+2025-11-25 00:23:49,384 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:49,384 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:49,384 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:49,384 - DEBUG - Partición Trabajos Pequeños: Ocupada, Proc: P1, Frag: 10
+2025-11-25 00:23:50,222 - INFO - Tiempo actual: 8
+2025-11-25 00:23:50,223 - INFO - Ejecutando P1 (5/5) en Trabajos Pequeños
+2025-11-25 00:23:50,223 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:50,223 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:50,223 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:50,223 - DEBUG - Partición Trabajos Pequeños: Ocupada, Proc: P1, Frag: 10
+2025-11-25 00:23:50,223 - INFO - Partición Trabajos Pequeños liberada por P1
+2025-11-25 00:23:50,223 - INFO - Proceso P1 finalizado
+2025-11-25 00:23:50,623 - INFO - Tiempo actual: 9
+2025-11-25 00:23:50,623 - INFO - Proceso P2 asignado a Trabajos Grandes (fragmentación 190)
+2025-11-25 00:23:50,623 - INFO - Reasignado desde suspendido: P2
+2025-11-25 00:23:50,623 - INFO - Ejecutando P2 (1/7) en Trabajos Grandes
+2025-11-25 00:23:50,623 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:50,623 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P2, Frag: 190
+2025-11-25 00:23:50,623 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:50,623 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:50,883 - INFO - Tiempo actual: 10
+2025-11-25 00:23:50,883 - INFO - Ejecutando P2 (2/7) en Trabajos Grandes
+2025-11-25 00:23:50,883 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:50,883 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P2, Frag: 190
+2025-11-25 00:23:50,883 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:50,883 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:51,044 - INFO - Tiempo actual: 11
+2025-11-25 00:23:51,044 - INFO - Ejecutando P2 (3/7) en Trabajos Grandes
+2025-11-25 00:23:51,044 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:51,044 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P2, Frag: 190
+2025-11-25 00:23:51,044 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:51,045 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:51,206 - INFO - Tiempo actual: 12
+2025-11-25 00:23:51,206 - INFO - Ejecutando P2 (4/7) en Trabajos Grandes
+2025-11-25 00:23:51,206 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:51,206 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P2, Frag: 190
+2025-11-25 00:23:51,206 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:51,206 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:51,367 - INFO - Tiempo actual: 13
+2025-11-25 00:23:51,367 - INFO - Ejecutando P2 (5/7) en Trabajos Grandes
+2025-11-25 00:23:51,368 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:51,368 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P2, Frag: 190
+2025-11-25 00:23:51,368 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:51,368 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:51,508 - INFO - Tiempo actual: 14
+2025-11-25 00:23:51,509 - INFO - Ejecutando P2 (6/7) en Trabajos Grandes
+2025-11-25 00:23:51,509 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:51,509 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P2, Frag: 190
+2025-11-25 00:23:51,509 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:51,509 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:51,670 - INFO - Tiempo actual: 15
+2025-11-25 00:23:51,670 - INFO - Ejecutando P2 (7/7) en Trabajos Grandes
+2025-11-25 00:23:51,670 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:51,670 - DEBUG - Partición Trabajos Grandes: Ocupada, Proc: P2, Frag: 190
+2025-11-25 00:23:51,670 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:51,671 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:51,671 - INFO - Partición Trabajos Grandes liberada por P2
+2025-11-25 00:23:51,671 - INFO - Proceso P2 finalizado
+2025-11-25 00:23:51,792 - INFO - Tiempo actual: 16
+2025-11-25 00:23:51,792 - INFO - Ejecutando P4 (1/10) en Trabajos Medianos
+2025-11-25 00:23:51,792 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:51,792 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:51,792 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:51,792 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:51,973 - INFO - Tiempo actual: 17
+2025-11-25 00:23:51,973 - INFO - Ejecutando P4 (2/10) en Trabajos Medianos
+2025-11-25 00:23:51,973 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:51,974 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:51,974 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:51,974 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,135 - INFO - Tiempo actual: 18
+2025-11-25 00:23:52,136 - INFO - Ejecutando P4 (3/10) en Trabajos Medianos
+2025-11-25 00:23:52,136 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:52,136 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,136 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:52,136 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,296 - INFO - Tiempo actual: 19
+2025-11-25 00:23:52,296 - INFO - Ejecutando P4 (4/10) en Trabajos Medianos
+2025-11-25 00:23:52,296 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:52,296 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,297 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:52,297 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,419 - INFO - Tiempo actual: 20
+2025-11-25 00:23:52,419 - INFO - Ejecutando P4 (5/10) en Trabajos Medianos
+2025-11-25 00:23:52,419 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:52,420 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,420 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:52,420 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,579 - INFO - Tiempo actual: 21
+2025-11-25 00:23:52,580 - INFO - Ejecutando P4 (6/10) en Trabajos Medianos
+2025-11-25 00:23:52,580 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:52,580 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,580 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:52,580 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,701 - INFO - Tiempo actual: 22
+2025-11-25 00:23:52,702 - INFO - Ejecutando P4 (7/10) en Trabajos Medianos
+2025-11-25 00:23:52,702 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:52,702 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,702 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:52,702 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,863 - INFO - Tiempo actual: 23
+2025-11-25 00:23:52,863 - INFO - Ejecutando P4 (8/10) en Trabajos Medianos
+2025-11-25 00:23:52,863 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:52,863 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:52,863 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:52,863 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:53,024 - INFO - Tiempo actual: 24
+2025-11-25 00:23:53,024 - INFO - Ejecutando P4 (9/10) en Trabajos Medianos
+2025-11-25 00:23:53,025 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:53,025 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:53,025 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:53,025 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:53,146 - INFO - Tiempo actual: 25
+2025-11-25 00:23:53,146 - INFO - Ejecutando P4 (10/10) en Trabajos Medianos
+2025-11-25 00:23:53,146 - DEBUG - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:53,146 - DEBUG - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:53,146 - DEBUG - Partición Trabajos Medianos: Ocupada, Proc: P4, Frag: 50
+2025-11-25 00:23:53,146 - DEBUG - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:53,146 - INFO - Partición Trabajos Medianos liberada por P4
+2025-11-25 00:23:53,146 - INFO - Proceso P4 finalizado
+2025-11-25 00:23:53,308 - INFO - === Estado final de la simulación ===
+2025-11-25 00:23:53,308 - INFO - Tiempo total: 26
+2025-11-25 00:23:53,308 - INFO - Procesos finalizados: ['P3', 'P1', 'P2', 'P4']
+2025-11-25 00:23:53,308 - INFO - Partición Sistema Operativo: Ocupada, Proc: -, Frag: 0
+2025-11-25 00:23:53,308 - INFO - Partición Trabajos Grandes: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:53,308 - INFO - Partición Trabajos Medianos: Libre, Proc: -, Frag: 0
+2025-11-25 00:23:53,309 - INFO - Partición Trabajos Pequeños: Libre, Proc: -, Frag: 0

@@ -237,7 +237,7 @@ def mostrar_tabla(tiempo, mensaje_evento):
         estado_str = "OCUPADO" if part.ocupado else "LIBRE"
         proc_str = part.id_proceso if part.id_proceso else "---"
         
-        color = "\033[91m" if part.ocupado else "\033[92m" # Rojo/Verde
+        color = "\033[91m" if part.ocupado else "\033[92m"
         reset = "\033[0m"
         
         print(f"{part.id:<20} | {color}{estado_str:<10}{reset} | {proc_str:<10} | {part.fragmentacion:<8} | {part.espacio:<8}")
@@ -254,13 +254,18 @@ def mostrar_tabla(tiempo, mensaje_evento):
         print(" (Sin procesos en memoria)")
     
     for p in listos_ordenados:
-        barra = "#" * p.t_memoria + "-" * (p.irrupcion - p.t_memoria)
-        
+        # ----------- BARRA DE PROGRESO NORMALIZADA (ARREGLADO) -----------
+        MAX_BARRA = 20
+        progreso_real = p.t_memoria / p.irrupcion if p.irrupcion > 0 else 0
+        len_progreso = int(progreso_real * MAX_BARRA)
+        barra = "#" * len_progreso + "-" * (MAX_BARRA - len_progreso)
+        # ------------------------------------------------------------------
+
         estado_txt = "EJECUTANDO" if p.estado == ESTADO_EJECUCION else "LISTO"
-        color_proc = "\033[93m" if p.estado == ESTADO_EJECUCION else "\033[96m" # Amarillo/Cyan
+        color_proc = "\033[93m" if p.estado == ESTADO_EJECUCION else "\033[96m"
         reset = "\033[0m"
         
-        print(f"{p.nombre:<10} | {color_proc}{estado_txt:<12}{reset} | {p.t_memoria}/{p.irrupcion} [{barra:<10}] | {p.particion_asignada:<20}")
+        print(f"{p.nombre:<10} | {color_proc}{estado_txt:<12}{reset} | {p.t_memoria}/{p.irrupcion} [{barra:<20}] | {p.particion_asignada:<20}")
 
     print("\n" + "=" * 80)
     print(f" EVENTO: {mensaje_evento}")
@@ -282,10 +287,7 @@ def main_loop():
         for p in list(ColaProcesos):
             if p.arribo <= tiempo_actual:
                 ColaProcesos.remove(p)
-                #logging.info("Llegada de proceso %s", p.nombre)
                 if gradoMultiProgr < LIMITE_MULTIPROG:
-                    #asignado = estado_localizacion(p)
-                    #if asignado:
                     if estado_localizacion(p):
                         ColaListo.append(p)
                         gradoMultiProgr += 1
@@ -294,7 +296,6 @@ def main_loop():
                     p.estado = ESTADO_SUSPENDIDO
                     if p not in ColaSuspendido:
                         ColaSuspendido.append(p)
-                    #logging.info("Suspendido %s por límite de multiprogramación", p.nombre)
                     eventos.append(f"Llega {p.nombre} -> Suspendido (Límite MP)")                    
 
         # Reintento de suspendidos
@@ -304,13 +305,12 @@ def main_loop():
                 ColaListo.append(p)
                 p.estado = ESTADO_LISTO
                 gradoMultiProgr += 1
-                #logging.info("Reasignado desde suspendido: %s", p.nombre)
                 eventos.append(f"Recuperado {p.nombre}")
 
         # Ejecución - SRTF
         proceso_actual = obtener_proceso_srtf()
         for p in ColaListo:
-            p.estado =  ESTADO_LISTO
+            p.estado = ESTADO_LISTO
             
         if proceso_actual:
             proceso_actual.estado = ESTADO_EJECUCION
@@ -318,7 +318,7 @@ def main_loop():
             logging.info("Ejecutando %s (%d/%d) en %s", proceso_actual.nombre, proceso_actual.t_memoria, proceso_actual.irrupcion, proceso_actual.particion_asignada)
         else:
             logging.debug("No hay procesos listos")
-        # Actualizar UI
+
         if eventos:
             mensaje = " | ".join(eventos)
         elif proceso_actual:

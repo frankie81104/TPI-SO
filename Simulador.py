@@ -52,6 +52,10 @@ class Proceso:
     estado: str = ESTADO_NUEVO
     particion_asignada: str = None
 
+    # ----- Métricas temporales añadidas -----
+    tiempo_inicio: int = None
+    tiempo_fin: int = None
+
 # ------------------- PARTICIONES -------------------
 arreglo_particiones: List[Particion] = [
     Particion(id="Sistema Operativo", dir=0, espacio=100, id_proceso="SO", fragmentacion=0, ocupado=True),
@@ -66,6 +70,7 @@ ColaListo=[]
 ColaSuspendido=[]
 ColaFinalizado=[]
 
+# ------------------- RESET SIMULACION -------------------
 def reset_sim():
     global gradoMultiProgr, ColaListo, ColaSuspendido, ColaFinalizado, ColaProcesos
     gradoMultiProgr = 0
@@ -182,8 +187,14 @@ def ejecutar_reemplazo(nuevo_proceso):
 
     liberar_particion(victima)
     victima.estado = ESTADO_SUSPENDIDO
-    ColaListo.remove(victima)
-    ColaSuspendido.append(victima)
+    # mover victima a suspendidos
+    if victima in ColaListo:
+        try:
+            ColaListo.remove(victima)
+        except ValueError:
+            pass
+    if victima not in ColaSuspendido:
+        ColaSuspendido.append(victima)
     return True
 
 # ------------------- LOCALIZACION -------------------
@@ -209,8 +220,22 @@ def obtener_proceso_srtf():
         return None
     return min(ColaListo, key=lambda p: p.irrupcion - p.t_memoria)
 
+# ------------------- FUNCIÓN: calcular grado (sin dobles) -------------------
+def calcular_grado_mp(proceso_actual=None):
+    ids = set()
+    for p in ColaListo:
+        ids.add(id(p))
+    for p in ColaSuspendido:
+        ids.add(id(p))
+    if proceso_actual is not None:
+        ids.add(id(proceso_actual))
+    return len(ids)
+
 # ------------------- TABLA ACTUALIZADA -------------------
-def mostrar_tabla(tiempo, mensaje_evento):
+def mostrar_tabla(tiempo, mensaje_evento, proceso_actual=None):
+    global gradoMultiProgr
+    gradoMultiProgr = calcular_grado_mp(proceso_actual)
+
     os.system('cls' if os.name == 'nt' else 'clear')
     
     print(f"TIEMPO: {tiempo} | MULTIPROGRAMACIÓN: {gradoMultiProgr}/{LIMITE_MULTIPROG}")
@@ -233,7 +258,6 @@ def mostrar_tabla(tiempo, mensaje_evento):
     print(f"{'PROCESO':<10} | {'ESTADO':<12} | {'PROGRESO':<15} | {'PARTICIÓN':<20}")
     print("-" * 80)
 
-    # Unimos LISTOS + SUSPENDIDOS
     todos = ColaListo + ColaSuspendido
     todos_ordenados = sorted(todos, key=lambda p: p.irrupcion - p.t_memoria)
 
@@ -246,15 +270,14 @@ def mostrar_tabla(tiempo, mensaje_evento):
         len_progreso = int(progreso_real * MAX_BARRA)
         barra = "#" * len_progreso + "-" * (MAX_BARRA - len_progreso)
 
-        # Color según estado
         if p.estado == ESTADO_EJECUCION:
-            color = "\033[93m"   # amarillo
+            color = "\033[93m"
             estado_txt = "EJECUTANDO"
         elif p.estado == ESTADO_SUSPENDIDO:
-            color = "\033[91m"   # rojo
+            color = "\033[91m"
             estado_txt = "SUSPENDIDO"
         else:
-            color = "\033[96m"   # cyan
+            color = "\033[96m"
             estado_txt = "LISTO"
 
         reset = "\033[0m"
@@ -274,53 +297,78 @@ def mostrar_tabla(tiempo, mensaje_evento):
 def main_loop():
     global gradoMultiProgr
     tiempo_actual = 0
-    mensaje= "Inicio de Simulacion"
+    mensaje= "Inicio de Simulación"
+
     if not ColaProcesos and not ColaSuspendido and not ColaListo:
         print("Cargue un archivo primero.")
         return
 
     while ColaProcesos or ColaSuspendido or ColaListo:
+
         eventos=[]
 
-        # Llegada de procesos
+        # ------------------------------------------------------
+        # 🔥 TIEMPO 0 → NO hacer nada (solo mostrar particiones)
+        # ------------------------------------------------------
+        if tiempo_actual == 0:
+            mostrar_tabla(0, "Tiempo 0: Sin procesos aún")
+            input("Presione ENTER para comenzar en tiempo 1...")
+            tiempo_actual += 1
+            continue
+
+        # ------------------ LLEGADA NORMAL ---------------------
         for p in list(ColaProcesos):
             if p.arribo <= tiempo_actual:
-                ColaProcesos.remove(p)
-                if gradoMultiProgr < LIMITE_MULTIPROG:
-                    if estado_localizacion(p):
-                        ColaListo.append(p)
-
-                        # 🔥 FIX: ACTUALIZACIÓN REAL DEL GRADO DE MP
-                        gradoMultiProgr = len(ColaListo)
-
+                grado_prev = calcular_grado_mp()
+                if grado_prev < LIMITE_MULTIPROG:
+                    try:
+                        ColaProcesos.remove(p)
+                    except:
+                        pass
+                    ubicado = estado_localizacion(p)
+                    if ubicado:
+                        if p not in ColaListo:
+                            ColaListo.append(p)
                         eventos.append(f"Llega {p.nombre} -> Asignado")
+                    else:
+                        eventos.append(f"Llega {p.nombre} -> Suspendido")
                 else:
-                    p.estado = ESTADO_SUSPENDIDO
-                    if p not in ColaSuspendido:
-                        ColaSuspendido.append(p)
-                    eventos.append(f"Llega {p.nombre} -> Suspendido (Límite MP)")                    
+                    eventos.append(f"Llega {p.nombre} -> Espera (MP llena)")
 
-        # Reintento suspendidos
+        # ---------------- RECUPERAR SUSPENDIDOS ----------------
         for p in list(ColaSuspendido):
-            if gradoMultiProgr < LIMITE_MULTIPROG and estado_localizacion(p):
-                ColaSuspendido.remove(p)
-                p.estado = ESTADO_LISTO
-                ColaListo.append(p)
-
-                # 🔥 FIX: actualizar multiprogramación
-                gradoMultiProgr = len(ColaListo)
-
+            if calcular_grado_mp() >= LIMITE_MULTIPROG:
+                break
+            ubicado = estado_localizacion(p)
+            if ubicado:
+                try:
+                    ColaSuspendido.remove(p)
+                except:
+                    pass
+                if p not in ColaListo:
+                    ColaListo.append(p)
                 eventos.append(f"Recuperado {p.nombre}")
 
-        # Ejecución
+        gradoMultiProgr = calcular_grado_mp()
+
+        # ------------------------- EJECUCIÓN --------------------
+        anterior = None
+        for q in ColaListo:
+            if q.estado == ESTADO_EJECUCION:
+                anterior = q
+            q.estado = ESTADO_LISTO
+
         proceso_actual = obtener_proceso_srtf()
-        for p in ColaListo:
-            p.estado = ESTADO_LISTO
-            
+
+        if anterior and anterior != proceso_actual:
+            anterior.estado = ESTADO_LISTO
+
         if proceso_actual:
+            if proceso_actual.tiempo_inicio is None:
+                proceso_actual.tiempo_inicio = tiempo_actual
             proceso_actual.estado = ESTADO_EJECUCION
             proceso_actual.t_memoria += 1
-            logging.info("Ejecutando %s (%d/%d) en %s", proceso_actual.nombre, proceso_actual.t_memoria, proceso_actual.irrupcion, proceso_actual.particion_asignada)
+            logging.info("Ejecutando %s (%d/%d)", proceso_actual.nombre, proceso_actual.t_memoria, proceso_actual.irrupcion)
 
         if eventos:
             mensaje = " | ".join(eventos)
@@ -328,33 +376,73 @@ def main_loop():
             mensaje = f"Ejecutando {proceso_actual.nombre}"
         else:
             mensaje = "Esperando procesos..."
-            
-        mostrar_tabla(tiempo_actual, mensaje)
 
-        # Finalización
+        mostrar_tabla(tiempo_actual, mensaje, proceso_actual)
+
+        # --------------------- FINALIZACIÓN ---------------------
         if proceso_actual:
             if proceso_actual.t_memoria >= proceso_actual.irrupcion:
-                ColaListo.remove(proceso_actual)
+                try:
+                    ColaListo.remove(proceso_actual)
+                except:
+                    pass
                 ColaFinalizado.append(proceso_actual)
                 liberar_particion(proceso_actual)
-
-                # 🔥 FIX: gradoMP EXACTO
-                gradoMultiProgr = len(ColaListo)
-
+                proceso_actual.tiempo_fin = tiempo_actual
                 proceso_actual.estado = ESTADO_FINALIZADO
+
                 logging.info("Finalizado %s", proceso_actual.nombre)
-                input(f"FIN DE PROCESO {proceso_actual.nombre} (Presione ENTER)")
+
+                for p in list(ColaSuspendido):
+                    if calcular_grado_mp() >= LIMITE_MULTIPROG:
+                        break
+                    ubicado = estado_localizacion(p)
+                    if ubicado:
+                        try:
+                            ColaSuspendido.remove(p)
+                        except:
+                            pass
+                        ColaListo.append(p)
+                        eventos.append(f"Recuperado {p.nombre}")
+
+                gradoMultiProgr = calcular_grado_mp()
+
+                input(f"FIN DE PROCESO {proceso_actual.nombre} (ENTER)")
             else:
-                input("Presione ENTER para siguiente ciclo...")
+                input("ENTER para siguiente ciclo...")
         else:
-            input("Presione ENTER para siguiente ciclo...")
+            input("ENTER para siguiente ciclo...")
 
         tiempo_actual += 1
 
+    # ---------------- FIN SIMULACIÓN ------------------------
     mostrar_tabla(tiempo_actual, "SIMULACIÓN COMPLETADA")
     print(f"\nFinalizados: {[p.nombre for p in ColaFinalizado]}")
-    input("Presione ENTER para volver al menú...")
 
+    if ColaFinalizado:
+        n = len(ColaFinalizado)
+        total_ret = 0
+        total_esp = 0
+
+        print("\n--- Métricas por proceso ---")
+        for p in ColaFinalizado:
+            if p.tiempo_fin is None:
+                p.tiempo_fin = tiempo_actual
+            ret = p.tiempo_fin - p.arribo
+            esp = ret - p.irrupcion
+            total_ret += ret
+            total_esp += esp
+            print(f"{p.nombre}: arribo={p.arribo}, inicio={p.tiempo_inicio}, fin={p.tiempo_fin}, retorno={ret}, espera={esp}")
+
+        print("\n--- Métricas globales ---")
+        print(f"Promedio retorno: {total_ret/n:.2f}")
+        print(f"Promedio espera:  {total_esp/n:.2f}")
+        print(f"Procesos terminados: {n}")
+        print(f"Procesos/tiempo: {n/tiempo_actual:.4f}")
+
+    input("ENTER para volver al menú...")
+
+# ------------------- MENÚ -------------------
 def main():
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')

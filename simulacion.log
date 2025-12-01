@@ -1,406 +1,248 @@
-2025-11-30 19:37:21,037 - INFO - --- SIMULACIÓN REINICIADA ---
-2025-11-30 19:37:22,658 - INFO - Lista de procesos cargada: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10']
-2025-11-30 19:37:29,012 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:29,013 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:29,013 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:29,013 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:29,013 - INFO - Reemplazo: expulsando P1 para alojar P4
-2025-11-30 19:37:29,013 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:29,013 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:29,013 - INFO - Proceso P4 suspendido
-2025-11-30 19:37:29,013 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:29,013 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:29,014 - INFO - Reemplazo: expulsando P2 para alojar P4
-2025-11-30 19:37:29,014 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:29,014 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:29,014 - INFO - Proceso P4 suspendido
-2025-11-30 19:37:29,014 - INFO - Ejecutando P3 (1/25)
-2025-11-30 19:37:29,214 - DEBUG - No se encontró partición para P5
-2025-11-30 19:37:29,214 - INFO - Reemplazo: expulsando P3 para alojar P5
-2025-11-30 19:37:29,214 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:29,214 - INFO - Proceso P5 asignado a Trabajos Grandes (fragmentación 40)
-2025-11-30 19:37:29,214 - INFO - Ejecutando P5 (1/15)
-2025-11-30 19:37:29,437 - INFO - Ejecutando P5 (2/15)
-2025-11-30 19:37:29,598 - INFO - Ejecutando P5 (3/15)
-2025-11-30 19:37:32,162 - INFO - Ejecutando P5 (4/15)
-2025-11-30 19:37:32,762 - INFO - Ejecutando P5 (5/15)
-2025-11-30 19:37:32,801 - INFO - Ejecutando P5 (6/15)
-2025-11-30 19:37:32,842 - INFO - Ejecutando P5 (7/15)
-2025-11-30 19:37:32,882 - INFO - Ejecutando P5 (8/15)
-2025-11-30 19:37:32,923 - INFO - Ejecutando P5 (9/15)
-2025-11-30 19:37:32,964 - INFO - Ejecutando P5 (10/15)
-2025-11-30 19:37:33,003 - INFO - Ejecutando P5 (11/15)
-2025-11-30 19:37:33,043 - INFO - Ejecutando P5 (12/15)
-2025-11-30 19:37:33,083 - INFO - Ejecutando P5 (13/15)
-2025-11-30 19:37:33,123 - INFO - Ejecutando P5 (14/15)
-2025-11-30 19:37:33,164 - INFO - Ejecutando P5 (15/15)
-2025-11-30 19:37:33,166 - INFO - Partición Trabajos Grandes liberada por P5
-2025-11-30 19:37:33,166 - INFO - Finalizado P5
-2025-11-30 19:37:33,167 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
-2025-11-30 19:37:33,167 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:33,167 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:33,167 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:33,167 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:33,167 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:33,167 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:33,203 - INFO - Proceso P6 asignado a Trabajos Pequeños (fragmentación 5)
-2025-11-30 19:37:33,203 - INFO - Ejecutando P6 (1/4)
-2025-11-30 19:37:33,243 - INFO - Ejecutando P6 (2/4)
-2025-11-30 19:37:33,283 - INFO - Ejecutando P6 (3/4)
-2025-11-30 19:37:33,323 - INFO - Ejecutando P6 (4/4)
-2025-11-30 19:37:33,326 - INFO - Partición Trabajos Pequeños liberada por P6
-2025-11-30 19:37:33,326 - INFO - Finalizado P6
-2025-11-30 19:37:33,326 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:33,326 - INFO - Reemplazo: expulsando P2 para alojar P3
-2025-11-30 19:37:33,326 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:33,326 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:33,326 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:33,326 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:33,363 - INFO - Proceso P7 asignado a Trabajos Medianos (fragmentación 30)
-2025-11-30 19:37:33,363 - INFO - Ejecutando P7 (1/9)
-2025-11-30 19:37:33,403 - INFO - Ejecutando P7 (2/9)
-2025-11-30 19:37:33,443 - INFO - Ejecutando P7 (3/9)
-2025-11-30 19:37:34,194 - INFO - Ejecutando P7 (4/9)
-2025-11-30 19:37:34,394 - INFO - Ejecutando P7 (5/9)
-2025-11-30 19:37:34,596 - INFO - Ejecutando P7 (6/9)
-2025-11-30 19:37:34,759 - INFO - Ejecutando P7 (7/9)
-2025-11-30 19:37:35,360 - INFO - Ejecutando P7 (8/9)
-2025-11-30 19:37:35,399 - INFO - Ejecutando P7 (9/9)
-2025-11-30 19:37:35,402 - INFO - Partición Trabajos Medianos liberada por P7
-2025-11-30 19:37:35,403 - INFO - Finalizado P7
-2025-11-30 19:37:35,403 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:35,403 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:35,403 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:35,403 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:35,403 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:35,403 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:35,439 - DEBUG - No se encontró partición para P8
-2025-11-30 19:37:35,439 - INFO - Reemplazo: expulsando P2 para alojar P8
-2025-11-30 19:37:35,439 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:35,440 - INFO - Proceso P8 asignado a Trabajos Medianos (fragmentación 90)
-2025-11-30 19:37:35,440 - INFO - Ejecutando P8 (1/7)
-2025-11-30 19:37:35,479 - INFO - Ejecutando P8 (2/7)
-2025-11-30 19:37:35,519 - INFO - Ejecutando P8 (3/7)
-2025-11-30 19:37:35,559 - INFO - Ejecutando P8 (4/7)
-2025-11-30 19:37:35,599 - INFO - Ejecutando P8 (5/7)
-2025-11-30 19:37:35,639 - INFO - Ejecutando P8 (6/7)
-2025-11-30 19:37:35,679 - INFO - Ejecutando P8 (7/7)
-2025-11-30 19:37:35,681 - INFO - Partición Trabajos Medianos liberada por P8
-2025-11-30 19:37:35,681 - INFO - Finalizado P8
-2025-11-30 19:37:35,681 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:35,682 - INFO - Reemplazo: expulsando P4 para alojar P3
-2025-11-30 19:37:35,682 - INFO - Partición Trabajos Grandes liberada por P4
-2025-11-30 19:37:35,682 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:35,682 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:35,682 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:35,979 - DEBUG - No se encontró partición para P9
-2025-11-30 19:37:35,979 - INFO - Reemplazo: expulsando P3 para alojar P9
-2025-11-30 19:37:35,979 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:35,979 - INFO - Proceso P9 asignado a Trabajos Grandes (fragmentación 120)
-2025-11-30 19:37:35,979 - INFO - Ejecutando P9 (1/6)
-2025-11-30 19:37:36,141 - INFO - Ejecutando P9 (2/6)
-2025-11-30 19:37:36,583 - INFO - Ejecutando P9 (3/6)
-2025-11-30 19:37:36,865 - INFO - Ejecutando P9 (4/6)
-2025-11-30 19:37:37,147 - INFO - Ejecutando P9 (5/6)
-2025-11-30 19:37:37,469 - INFO - Ejecutando P9 (6/6)
-2025-11-30 19:37:37,472 - INFO - Partición Trabajos Grandes liberada por P9
-2025-11-30 19:37:37,472 - INFO - Finalizado P9
-2025-11-30 19:37:37,472 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
-2025-11-30 19:37:37,473 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:37,473 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:37,473 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:37,473 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:37,473 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:37,711 - DEBUG - No se encontró partición para P10
-2025-11-30 19:37:37,711 - INFO - Reemplazo: expulsando P2 para alojar P10
-2025-11-30 19:37:37,711 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:37,712 - INFO - Proceso P10 asignado a Trabajos Medianos (fragmentación 10)
-2025-11-30 19:37:37,712 - INFO - Ejecutando P10 (1/10)
-2025-11-30 19:37:38,332 - INFO - Ejecutando P10 (2/10)
-2025-11-30 19:37:38,694 - INFO - Ejecutando P10 (3/10)
-2025-11-30 19:37:38,856 - INFO - Ejecutando P10 (4/10)
-2025-11-30 19:37:39,456 - INFO - Ejecutando P10 (5/10)
-2025-11-30 19:37:39,496 - INFO - Ejecutando P10 (6/10)
-2025-11-30 19:37:39,537 - INFO - Ejecutando P10 (7/10)
-2025-11-30 19:37:39,576 - INFO - Ejecutando P10 (8/10)
-2025-11-30 19:37:39,616 - INFO - Ejecutando P10 (9/10)
-2025-11-30 19:37:39,657 - INFO - Ejecutando P10 (10/10)
-2025-11-30 19:37:39,659 - INFO - Partición Trabajos Medianos liberada por P10
-2025-11-30 19:37:39,659 - INFO - Finalizado P10
-2025-11-30 19:37:39,659 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,659 - INFO - Reemplazo: expulsando P4 para alojar P3
-2025-11-30 19:37:39,659 - INFO - Partición Trabajos Grandes liberada por P4
-2025-11-30 19:37:39,659 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:39,659 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:39,659 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:39,698 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:39,698 - INFO - Reemplazo: expulsando P3 para alojar P4
-2025-11-30 19:37:39,698 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:39,698 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
-2025-11-30 19:37:39,698 - INFO - Ejecutando P2 (1/8)
-2025-11-30 19:37:39,738 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,738 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:39,738 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:39,738 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,738 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:39,738 - INFO - Ejecutando P2 (2/8)
-2025-11-30 19:37:39,778 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,778 - INFO - Reemplazo: expulsando P2 para alojar P3
-2025-11-30 19:37:39,778 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:39,778 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,778 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:39,778 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:39,778 - INFO - Ejecutando P4 (1/20)
-2025-11-30 19:37:39,818 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,818 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:39,819 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:39,819 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,819 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:39,819 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:39,819 - INFO - Ejecutando P2 (3/8)
-2025-11-30 19:37:39,858 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,858 - INFO - Reemplazo: expulsando P2 para alojar P3
-2025-11-30 19:37:39,858 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:39,859 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,859 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:39,859 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:39,859 - INFO - Ejecutando P4 (2/20)
-2025-11-30 19:37:39,898 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,898 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:39,898 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:39,898 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,898 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:39,898 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:39,898 - INFO - Ejecutando P2 (4/8)
-2025-11-30 19:37:39,938 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,938 - INFO - Reemplazo: expulsando P2 para alojar P3
-2025-11-30 19:37:39,938 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:39,939 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,939 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:39,939 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:39,939 - INFO - Ejecutando P4 (3/20)
-2025-11-30 19:37:39,979 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,979 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:39,979 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:39,979 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:39,979 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:39,979 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:39,979 - INFO - Ejecutando P2 (5/8)
-2025-11-30 19:37:40,019 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,019 - INFO - Reemplazo: expulsando P2 para alojar P3
-2025-11-30 19:37:40,019 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:40,019 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,019 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:40,020 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:40,020 - INFO - Ejecutando P4 (4/20)
-2025-11-30 19:37:40,059 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,059 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:40,059 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:40,059 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,059 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:40,059 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:40,059 - INFO - Ejecutando P2 (6/8)
-2025-11-30 19:37:40,100 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,100 - INFO - Reemplazo: expulsando P2 para alojar P3
-2025-11-30 19:37:40,100 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:40,100 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,100 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:40,100 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:40,100 - INFO - Ejecutando P4 (5/20)
-2025-11-30 19:37:40,140 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,140 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:40,141 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:40,141 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,141 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:40,141 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:40,141 - INFO - Ejecutando P2 (7/8)
-2025-11-30 19:37:40,181 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,181 - INFO - Reemplazo: expulsando P2 para alojar P3
-2025-11-30 19:37:40,181 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:40,181 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,181 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:40,181 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:40,181 - INFO - Ejecutando P4 (6/20)
-2025-11-30 19:37:40,222 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,222 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:40,222 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:40,222 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,222 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:40,222 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
-2025-11-30 19:37:40,222 - INFO - Ejecutando P2 (8/8)
-2025-11-30 19:37:40,225 - INFO - Partición Trabajos Medianos liberada por P2
-2025-11-30 19:37:40,225 - INFO - Finalizado P2
-2025-11-30 19:37:40,225 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,225 - INFO - Reemplazo: expulsando P4 para alojar P3
-2025-11-30 19:37:40,225 - INFO - Partición Trabajos Grandes liberada por P4
-2025-11-30 19:37:40,225 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:40,225 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:40,262 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:40,262 - INFO - Reemplazo: expulsando P3 para alojar P4
-2025-11-30 19:37:40,262 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:40,262 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
-2025-11-30 19:37:40,262 - INFO - Ejecutando P4 (7/20)
-2025-11-30 19:37:40,302 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,303 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:40,303 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:40,303 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,303 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:40,303 - INFO - Ejecutando P4 (8/20)
-2025-11-30 19:37:40,612 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:40,612 - INFO - Reemplazo: expulsando P4 para alojar P3
-2025-11-30 19:37:40,612 - INFO - Partición Trabajos Grandes liberada por P4
-2025-11-30 19:37:40,612 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:40,612 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:40,612 - INFO - Ejecutando P3 (2/25)
-2025-11-30 19:37:40,893 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:40,894 - INFO - Reemplazo: expulsando P3 para alojar P4
-2025-11-30 19:37:40,894 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:40,894 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
-2025-11-30 19:37:40,895 - INFO - Ejecutando P4 (9/20)
-2025-11-30 19:37:41,135 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:41,136 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:41,136 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:41,136 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:41,136 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:41,136 - INFO - Ejecutando P4 (10/20)
-2025-11-30 19:37:41,497 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:41,497 - INFO - Reemplazo: expulsando P4 para alojar P3
-2025-11-30 19:37:41,498 - INFO - Partición Trabajos Grandes liberada por P4
-2025-11-30 19:37:41,498 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:41,498 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:41,498 - INFO - Ejecutando P3 (3/25)
-2025-11-30 19:37:41,779 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:41,780 - INFO - Reemplazo: expulsando P3 para alojar P4
-2025-11-30 19:37:41,780 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:41,780 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
-2025-11-30 19:37:41,780 - INFO - Ejecutando P4 (11/20)
-2025-11-30 19:37:42,120 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:42,121 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:42,121 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:42,121 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:42,121 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:42,121 - INFO - Ejecutando P4 (12/20)
-2025-11-30 19:37:42,363 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:42,363 - INFO - Reemplazo: expulsando P4 para alojar P3
-2025-11-30 19:37:42,363 - INFO - Partición Trabajos Grandes liberada por P4
-2025-11-30 19:37:42,363 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:42,363 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:42,364 - INFO - Ejecutando P3 (4/25)
-2025-11-30 19:37:42,564 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:42,564 - INFO - Reemplazo: expulsando P3 para alojar P4
-2025-11-30 19:37:42,565 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:42,565 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
-2025-11-30 19:37:42,565 - INFO - Ejecutando P4 (13/20)
-2025-11-30 19:37:42,766 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:42,767 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:42,767 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:42,767 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:42,767 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:42,767 - INFO - Ejecutando P4 (14/20)
-2025-11-30 19:37:42,968 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:42,968 - INFO - Reemplazo: expulsando P4 para alojar P3
-2025-11-30 19:37:42,969 - INFO - Partición Trabajos Grandes liberada por P4
-2025-11-30 19:37:42,969 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:42,969 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:42,969 - INFO - Ejecutando P3 (5/25)
-2025-11-30 19:37:43,170 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:43,171 - INFO - Reemplazo: expulsando P3 para alojar P4
-2025-11-30 19:37:43,171 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:43,171 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
-2025-11-30 19:37:43,171 - INFO - Ejecutando P4 (15/20)
-2025-11-30 19:37:43,373 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:43,373 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:43,373 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:43,373 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:43,373 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:43,373 - INFO - Ejecutando P4 (16/20)
-2025-11-30 19:37:43,534 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:43,535 - INFO - Reemplazo: expulsando P4 para alojar P3
-2025-11-30 19:37:43,535 - INFO - Partición Trabajos Grandes liberada por P4
-2025-11-30 19:37:43,535 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:43,535 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:43,535 - INFO - Ejecutando P3 (6/25)
-2025-11-30 19:37:43,737 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:43,737 - INFO - Reemplazo: expulsando P3 para alojar P4
-2025-11-30 19:37:43,737 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:43,737 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
-2025-11-30 19:37:43,737 - INFO - Ejecutando P4 (17/20)
-2025-11-30 19:37:43,958 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:43,959 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:43,959 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:43,959 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:43,959 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:43,959 - INFO - Ejecutando P4 (18/20)
-2025-11-30 19:37:44,160 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:44,160 - INFO - Reemplazo: expulsando P4 para alojar P3
-2025-11-30 19:37:44,161 - INFO - Partición Trabajos Grandes liberada por P4
-2025-11-30 19:37:44,161 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:44,161 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:44,161 - INFO - Ejecutando P3 (7/25)
-2025-11-30 19:37:44,362 - DEBUG - No se encontró partición para P4
-2025-11-30 19:37:44,362 - INFO - Reemplazo: expulsando P3 para alojar P4
-2025-11-30 19:37:44,362 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:44,363 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
-2025-11-30 19:37:44,363 - INFO - Ejecutando P4 (19/20)
-2025-11-30 19:37:44,544 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:44,544 - INFO - Reemplazo: expulsando P1 para alojar P3
-2025-11-30 19:37:44,545 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:44,545 - DEBUG - No se encontró partición para P3
-2025-11-30 19:37:44,545 - INFO - Proceso P3 suspendido
-2025-11-30 19:37:44,545 - INFO - Ejecutando P4 (20/20)
-2025-11-30 19:37:44,550 - INFO - Partición Trabajos Grandes liberada por P4
-2025-11-30 19:37:44,550 - INFO - Finalizado P4
-2025-11-30 19:37:44,550 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
-2025-11-30 19:37:44,550 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
-2025-11-30 19:37:44,706 - INFO - Ejecutando P3 (8/25)
-2025-11-30 19:37:44,909 - INFO - Ejecutando P3 (9/25)
-2025-11-30 19:37:45,509 - INFO - Ejecutando P3 (10/25)
-2025-11-30 19:37:45,548 - INFO - Ejecutando P3 (11/25)
-2025-11-30 19:37:45,588 - INFO - Ejecutando P3 (12/25)
-2025-11-30 19:37:45,628 - INFO - Ejecutando P3 (13/25)
-2025-11-30 19:37:45,669 - INFO - Ejecutando P3 (14/25)
-2025-11-30 19:37:45,708 - INFO - Ejecutando P3 (15/25)
-2025-11-30 19:37:45,749 - INFO - Ejecutando P3 (16/25)
-2025-11-30 19:37:45,789 - INFO - Ejecutando P3 (17/25)
-2025-11-30 19:37:45,830 - INFO - Ejecutando P3 (18/25)
-2025-11-30 19:37:45,869 - INFO - Ejecutando P3 (19/25)
-2025-11-30 19:37:45,910 - INFO - Ejecutando P3 (20/25)
-2025-11-30 19:37:45,950 - INFO - Ejecutando P3 (21/25)
-2025-11-30 19:37:45,990 - INFO - Ejecutando P3 (22/25)
-2025-11-30 19:37:46,030 - INFO - Ejecutando P3 (23/25)
-2025-11-30 19:37:46,070 - INFO - Ejecutando P3 (24/25)
-2025-11-30 19:37:46,110 - INFO - Ejecutando P3 (25/25)
-2025-11-30 19:37:46,114 - INFO - Partición Trabajos Grandes liberada por P3
-2025-11-30 19:37:46,114 - INFO - Finalizado P3
-2025-11-30 19:37:46,151 - INFO - Ejecutando P1 (1/30)
-2025-11-30 19:37:46,378 - INFO - Ejecutando P1 (2/30)
-2025-11-30 19:37:46,580 - INFO - Ejecutando P1 (3/30)
-2025-11-30 19:37:47,181 - INFO - Ejecutando P1 (4/30)
-2025-11-30 19:37:47,221 - INFO - Ejecutando P1 (5/30)
-2025-11-30 19:37:47,261 - INFO - Ejecutando P1 (6/30)
-2025-11-30 19:37:47,302 - INFO - Ejecutando P1 (7/30)
-2025-11-30 19:37:47,341 - INFO - Ejecutando P1 (8/30)
-2025-11-30 19:37:47,382 - INFO - Ejecutando P1 (9/30)
-2025-11-30 19:37:47,421 - INFO - Ejecutando P1 (10/30)
-2025-11-30 19:37:47,461 - INFO - Ejecutando P1 (11/30)
-2025-11-30 19:37:47,501 - INFO - Ejecutando P1 (12/30)
-2025-11-30 19:37:47,542 - INFO - Ejecutando P1 (13/30)
-2025-11-30 19:37:47,582 - INFO - Ejecutando P1 (14/30)
-2025-11-30 19:37:47,623 - INFO - Ejecutando P1 (15/30)
-2025-11-30 19:37:47,885 - INFO - Ejecutando P1 (16/30)
-2025-11-30 19:37:48,046 - INFO - Ejecutando P1 (17/30)
-2025-11-30 19:37:48,208 - INFO - Ejecutando P1 (18/30)
-2025-11-30 19:37:48,371 - INFO - Ejecutando P1 (19/30)
-2025-11-30 19:37:48,533 - INFO - Ejecutando P1 (20/30)
-2025-11-30 19:37:48,695 - INFO - Ejecutando P1 (21/30)
-2025-11-30 19:37:48,941 - INFO - Ejecutando P1 (22/30)
-2025-11-30 19:37:49,019 - INFO - Ejecutando P1 (23/30)
-2025-11-30 19:37:49,181 - INFO - Ejecutando P1 (24/30)
-2025-11-30 19:37:49,343 - INFO - Ejecutando P1 (25/30)
-2025-11-30 19:37:49,546 - INFO - Ejecutando P1 (26/30)
-2025-11-30 19:37:49,708 - INFO - Ejecutando P1 (27/30)
-2025-11-30 19:37:49,870 - INFO - Ejecutando P1 (28/30)
-2025-11-30 19:37:50,032 - INFO - Ejecutando P1 (29/30)
-2025-11-30 19:37:50,194 - INFO - Ejecutando P1 (30/30)
-2025-11-30 19:37:50,197 - INFO - Partición Trabajos Pequeños liberada por P1
-2025-11-30 19:37:50,198 - INFO - Finalizado P1
+2025-11-30 22:34:34,228 - INFO - --- SIMULACIÓN REINICIADA ---
+2025-11-30 22:34:35,498 - INFO - Lista de procesos cargada: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10']
+2025-11-30 22:34:36,785 - INFO - Proceso P1 asignado a Trabajos Pequeños (fragmentación 0)
+2025-11-30 22:34:36,785 - INFO - Ejecutando P1 (1/30) en Trabajos Pequeños
+2025-11-30 22:34:37,544 - INFO - Proceso P2 asignado a Trabajos Medianos (fragmentación 0)
+2025-11-30 22:34:37,544 - INFO - Ejecutando P2 (1/8) en Trabajos Medianos
+2025-11-30 22:34:38,262 - INFO - Proceso P3 asignado a Trabajos Grandes (fragmentación 0)
+2025-11-30 22:34:38,262 - INFO - Ejecutando P2 (2/8) en Trabajos Medianos
+2025-11-30 22:34:38,863 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:38,863 - INFO - Ejecutando P2 (3/8) en Trabajos Medianos
+2025-11-30 22:34:39,461 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:39,461 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:39,461 - INFO - Ejecutando P2 (4/8) en Trabajos Medianos
+2025-11-30 22:34:40,060 - INFO - Ejecutando P2 (5/8) en Trabajos Medianos
+2025-11-30 22:34:40,640 - INFO - Ejecutando P2 (6/8) en Trabajos Medianos
+2025-11-30 22:34:41,200 - INFO - Ejecutando P2 (7/8) en Trabajos Medianos
+2025-11-30 22:34:41,800 - INFO - Ejecutando P2 (8/8) en Trabajos Medianos
+2025-11-30 22:34:41,803 - INFO - Partición Trabajos Medianos liberada por P2
+2025-11-30 22:34:41,804 - INFO - Finalizado P2
+2025-11-30 22:34:42,379 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:42,379 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:42,379 - INFO - Proceso P6 asignado a Trabajos Medianos (fragmentación 105)
+2025-11-30 22:34:42,379 - INFO - Ejecutando P6 (1/4) en Trabajos Medianos
+2025-11-30 22:34:42,978 - INFO - Ejecutando P6 (2/4) en Trabajos Medianos
+2025-11-30 22:34:43,578 - INFO - Ejecutando P6 (3/4) en Trabajos Medianos
+2025-11-30 22:34:44,138 - INFO - Ejecutando P6 (4/4) en Trabajos Medianos
+2025-11-30 22:34:44,142 - INFO - Partición Trabajos Medianos liberada por P6
+2025-11-30 22:34:44,142 - INFO - Finalizado P6
+2025-11-30 22:34:44,657 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:44,657 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:44,657 - INFO - Proceso P7 asignado a Trabajos Medianos (fragmentación 30)
+2025-11-30 22:34:44,658 - INFO - Ejecutando P7 (1/9) en Trabajos Medianos
+2025-11-30 22:34:45,177 - INFO - Ejecutando P7 (2/9) en Trabajos Medianos
+2025-11-30 22:34:45,697 - INFO - Ejecutando P7 (3/9) en Trabajos Medianos
+2025-11-30 22:34:46,217 - INFO - Ejecutando P7 (4/9) en Trabajos Medianos
+2025-11-30 22:34:46,696 - INFO - Ejecutando P7 (5/9) en Trabajos Medianos
+2025-11-30 22:34:47,056 - INFO - Ejecutando P7 (6/9) en Trabajos Medianos
+2025-11-30 22:34:47,496 - INFO - Ejecutando P7 (7/9) en Trabajos Medianos
+2025-11-30 22:34:47,857 - INFO - Ejecutando P7 (8/9) en Trabajos Medianos
+2025-11-30 22:34:48,197 - INFO - Ejecutando P7 (9/9) en Trabajos Medianos
+2025-11-30 22:34:48,201 - INFO - Partición Trabajos Medianos liberada por P7
+2025-11-30 22:34:48,201 - INFO - Finalizado P7
+2025-11-30 22:34:48,558 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:48,558 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:48,558 - INFO - Proceso P8 asignado a Trabajos Medianos (fragmentación 90)
+2025-11-30 22:34:48,558 - INFO - Ejecutando P8 (1/7) en Trabajos Medianos
+2025-11-30 22:34:48,838 - INFO - Ejecutando P8 (2/7) en Trabajos Medianos
+2025-11-30 22:34:49,118 - INFO - Ejecutando P8 (3/7) en Trabajos Medianos
+2025-11-30 22:34:49,359 - INFO - Ejecutando P8 (4/7) en Trabajos Medianos
+2025-11-30 22:34:49,560 - INFO - Ejecutando P8 (5/7) en Trabajos Medianos
+2025-11-30 22:34:49,801 - INFO - Ejecutando P8 (6/7) en Trabajos Medianos
+2025-11-30 22:34:50,002 - INFO - Ejecutando P8 (7/7) en Trabajos Medianos
+2025-11-30 22:34:50,005 - INFO - Partición Trabajos Medianos liberada por P8
+2025-11-30 22:34:50,006 - INFO - Finalizado P8
+2025-11-30 22:34:50,242 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:50,243 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:50,243 - INFO - Proceso P9 asignado a Trabajos Medianos (fragmentación 20)
+2025-11-30 22:34:50,243 - INFO - Ejecutando P9 (1/6) en Trabajos Medianos
+2025-11-30 22:34:50,483 - INFO - Ejecutando P9 (2/6) en Trabajos Medianos
+2025-11-30 22:34:50,704 - INFO - Ejecutando P9 (3/6) en Trabajos Medianos
+2025-11-30 22:34:50,865 - INFO - Ejecutando P9 (4/6) en Trabajos Medianos
+2025-11-30 22:34:51,067 - INFO - Ejecutando P9 (5/6) en Trabajos Medianos
+2025-11-30 22:34:51,229 - INFO - Ejecutando P9 (6/6) en Trabajos Medianos
+2025-11-30 22:34:51,233 - INFO - Partición Trabajos Medianos liberada por P9
+2025-11-30 22:34:51,234 - INFO - Finalizado P9
+2025-11-30 22:34:51,430 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:51,430 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:51,430 - INFO - Proceso P10 asignado a Trabajos Medianos (fragmentación 10)
+2025-11-30 22:34:51,430 - INFO - Ejecutando P10 (1/10) en Trabajos Medianos
+2025-11-30 22:34:51,670 - INFO - Ejecutando P10 (2/10) en Trabajos Medianos
+2025-11-30 22:34:51,911 - INFO - Ejecutando P10 (3/10) en Trabajos Medianos
+2025-11-30 22:34:52,072 - INFO - Ejecutando P10 (4/10) en Trabajos Medianos
+2025-11-30 22:34:52,273 - INFO - Ejecutando P10 (5/10) en Trabajos Medianos
+2025-11-30 22:34:52,434 - INFO - Ejecutando P10 (6/10) en Trabajos Medianos
+2025-11-30 22:34:52,596 - INFO - Ejecutando P10 (7/10) en Trabajos Medianos
+2025-11-30 22:34:52,797 - INFO - Ejecutando P10 (8/10) en Trabajos Medianos
+2025-11-30 22:34:52,938 - INFO - Ejecutando P10 (9/10) en Trabajos Medianos
+2025-11-30 22:34:53,100 - INFO - Ejecutando P10 (10/10) en Trabajos Medianos
+2025-11-30 22:34:53,102 - INFO - Partición Trabajos Medianos liberada por P10
+2025-11-30 22:34:53,102 - INFO - Finalizado P10
+2025-11-30 22:34:53,302 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:53,302 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:53,302 - INFO - Ejecutando P3 (1/25) en Trabajos Grandes
+2025-11-30 22:34:53,462 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:53,462 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:53,462 - INFO - Ejecutando P3 (2/25) en Trabajos Grandes
+2025-11-30 22:34:53,663 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:53,663 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:53,664 - INFO - Ejecutando P3 (3/25) en Trabajos Grandes
+2025-11-30 22:34:53,825 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:53,825 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:53,825 - INFO - Ejecutando P3 (4/25) en Trabajos Grandes
+2025-11-30 22:34:54,026 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:54,026 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:54,026 - INFO - Ejecutando P3 (5/25) en Trabajos Grandes
+2025-11-30 22:34:56,938 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:56,938 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:56,938 - INFO - Ejecutando P3 (6/25) en Trabajos Grandes
+2025-11-30 22:34:57,178 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:57,178 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:57,179 - INFO - Ejecutando P3 (7/25) en Trabajos Grandes
+2025-11-30 22:34:57,379 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:57,379 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:57,379 - INFO - Ejecutando P3 (8/25) en Trabajos Grandes
+2025-11-30 22:34:57,540 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:57,541 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:57,541 - INFO - Ejecutando P3 (9/25) en Trabajos Grandes
+2025-11-30 22:34:57,744 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:57,744 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:57,744 - INFO - Ejecutando P3 (10/25) en Trabajos Grandes
+2025-11-30 22:34:57,903 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:57,903 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:57,903 - INFO - Ejecutando P3 (11/25) en Trabajos Grandes
+2025-11-30 22:34:58,104 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:58,104 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:58,104 - INFO - Ejecutando P3 (12/25) en Trabajos Grandes
+2025-11-30 22:34:58,305 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:58,305 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:58,306 - INFO - Ejecutando P3 (13/25) en Trabajos Grandes
+2025-11-30 22:34:58,447 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:58,447 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:58,447 - INFO - Ejecutando P3 (14/25) en Trabajos Grandes
+2025-11-30 22:34:58,649 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:58,650 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:58,650 - INFO - Ejecutando P3 (15/25) en Trabajos Grandes
+2025-11-30 22:34:58,809 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:58,809 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:58,809 - INFO - Ejecutando P3 (16/25) en Trabajos Grandes
+2025-11-30 22:34:59,010 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:59,010 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:59,010 - INFO - Ejecutando P3 (17/25) en Trabajos Grandes
+2025-11-30 22:34:59,212 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:59,212 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:59,212 - INFO - Ejecutando P3 (18/25) en Trabajos Grandes
+2025-11-30 22:34:59,452 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:59,452 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:59,452 - INFO - Ejecutando P3 (19/25) en Trabajos Grandes
+2025-11-30 22:34:59,614 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:59,614 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:59,614 - INFO - Ejecutando P3 (20/25) en Trabajos Grandes
+2025-11-30 22:34:59,815 - DEBUG - No se encontró partición para P4
+2025-11-30 22:34:59,816 - DEBUG - No se encontró partición para P5
+2025-11-30 22:34:59,816 - INFO - Ejecutando P3 (21/25) en Trabajos Grandes
+2025-11-30 22:35:00,056 - DEBUG - No se encontró partición para P4
+2025-11-30 22:35:00,056 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:00,056 - INFO - Ejecutando P3 (22/25) en Trabajos Grandes
+2025-11-30 22:35:00,376 - DEBUG - No se encontró partición para P4
+2025-11-30 22:35:00,376 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:00,377 - INFO - Ejecutando P3 (23/25) en Trabajos Grandes
+2025-11-30 22:35:00,577 - DEBUG - No se encontró partición para P4
+2025-11-30 22:35:00,577 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:00,577 - INFO - Ejecutando P3 (24/25) en Trabajos Grandes
+2025-11-30 22:35:00,857 - DEBUG - No se encontró partición para P4
+2025-11-30 22:35:00,858 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:00,858 - INFO - Ejecutando P3 (25/25) en Trabajos Grandes
+2025-11-30 22:35:00,861 - INFO - Partición Trabajos Grandes liberada por P3
+2025-11-30 22:35:00,861 - INFO - Finalizado P3
+2025-11-30 22:35:01,098 - INFO - Proceso P4 asignado a Trabajos Grandes (fragmentación 50)
+2025-11-30 22:35:01,098 - INFO - Ejecutando P4 (1/20) en Trabajos Grandes
+2025-11-30 22:35:01,897 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:01,897 - INFO - Ejecutando P4 (2/20) en Trabajos Grandes
+2025-11-30 22:35:02,098 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:02,099 - INFO - Ejecutando P4 (3/20) en Trabajos Grandes
+2025-11-30 22:35:02,339 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:02,339 - INFO - Ejecutando P4 (4/20) en Trabajos Grandes
+2025-11-30 22:35:03,018 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:03,018 - INFO - Ejecutando P4 (5/20) en Trabajos Grandes
+2025-11-30 22:35:03,220 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:03,220 - INFO - Ejecutando P4 (6/20) en Trabajos Grandes
+2025-11-30 22:35:04,536 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:04,536 - INFO - Ejecutando P4 (7/20) en Trabajos Grandes
+2025-11-30 22:35:04,737 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:04,737 - INFO - Ejecutando P4 (8/20) en Trabajos Grandes
+2025-11-30 22:35:04,938 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:04,938 - INFO - Ejecutando P4 (9/20) en Trabajos Grandes
+2025-11-30 22:35:05,139 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:05,139 - INFO - Ejecutando P4 (10/20) en Trabajos Grandes
+2025-11-30 22:35:05,301 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:05,301 - INFO - Ejecutando P4 (11/20) en Trabajos Grandes
+2025-11-30 22:35:05,502 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:05,503 - INFO - Ejecutando P4 (12/20) en Trabajos Grandes
+2025-11-30 22:35:05,683 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:05,683 - INFO - Ejecutando P4 (13/20) en Trabajos Grandes
+2025-11-30 22:35:05,884 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:05,884 - INFO - Ejecutando P4 (14/20) en Trabajos Grandes
+2025-11-30 22:35:06,085 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:06,085 - INFO - Ejecutando P4 (15/20) en Trabajos Grandes
+2025-11-30 22:35:06,286 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:06,287 - INFO - Ejecutando P4 (16/20) en Trabajos Grandes
+2025-11-30 22:35:06,467 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:06,468 - INFO - Ejecutando P4 (17/20) en Trabajos Grandes
+2025-11-30 22:35:06,669 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:06,669 - INFO - Ejecutando P4 (18/20) en Trabajos Grandes
+2025-11-30 22:35:06,829 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:06,830 - INFO - Ejecutando P4 (19/20) en Trabajos Grandes
+2025-11-30 22:35:07,030 - DEBUG - No se encontró partición para P5
+2025-11-30 22:35:07,031 - INFO - Ejecutando P4 (20/20) en Trabajos Grandes
+2025-11-30 22:35:07,033 - INFO - Partición Trabajos Grandes liberada por P4
+2025-11-30 22:35:07,033 - INFO - Finalizado P4
+2025-11-30 22:35:07,192 - INFO - Proceso P5 asignado a Trabajos Grandes (fragmentación 40)
+2025-11-30 22:35:07,192 - INFO - Ejecutando P5 (1/15) en Trabajos Grandes
+2025-11-30 22:35:07,373 - INFO - Ejecutando P5 (2/15) en Trabajos Grandes
+2025-11-30 22:35:07,537 - INFO - Ejecutando P5 (3/15) en Trabajos Grandes
+2025-11-30 22:35:07,736 - INFO - Ejecutando P5 (4/15) en Trabajos Grandes
+2025-11-30 22:35:07,897 - INFO - Ejecutando P5 (5/15) en Trabajos Grandes
+2025-11-30 22:35:08,059 - INFO - Ejecutando P5 (6/15) en Trabajos Grandes
+2025-11-30 22:35:08,220 - INFO - Ejecutando P5 (7/15) en Trabajos Grandes
+2025-11-30 22:35:08,821 - INFO - Ejecutando P5 (8/15) en Trabajos Grandes
+2025-11-30 22:35:08,860 - INFO - Ejecutando P5 (9/15) en Trabajos Grandes
+2025-11-30 22:35:08,904 - INFO - Ejecutando P5 (10/15) en Trabajos Grandes
+2025-11-30 22:35:08,940 - INFO - Ejecutando P5 (11/15) en Trabajos Grandes
+2025-11-30 22:35:08,980 - INFO - Ejecutando P5 (12/15) en Trabajos Grandes
+2025-11-30 22:35:09,020 - INFO - Ejecutando P5 (13/15) en Trabajos Grandes
+2025-11-30 22:35:09,060 - INFO - Ejecutando P5 (14/15) en Trabajos Grandes
+2025-11-30 22:35:09,100 - INFO - Ejecutando P5 (15/15) en Trabajos Grandes
+2025-11-30 22:35:09,102 - INFO - Partición Trabajos Grandes liberada por P5
+2025-11-30 22:35:09,103 - INFO - Finalizado P5
+2025-11-30 22:35:09,140 - INFO - Ejecutando P1 (2/30) en Trabajos Pequeños
+2025-11-30 22:35:09,180 - INFO - Ejecutando P1 (3/30) en Trabajos Pequeños
+2025-11-30 22:35:09,220 - INFO - Ejecutando P1 (4/30) en Trabajos Pequeños
+2025-11-30 22:35:09,260 - INFO - Ejecutando P1 (5/30) en Trabajos Pequeños
+2025-11-30 22:35:09,301 - INFO - Ejecutando P1 (6/30) en Trabajos Pequeños
+2025-11-30 22:35:09,679 - INFO - Ejecutando P1 (7/30) en Trabajos Pequeños
+2025-11-30 22:35:10,280 - INFO - Ejecutando P1 (8/30) en Trabajos Pequeños
+2025-11-30 22:35:10,320 - INFO - Ejecutando P1 (9/30) en Trabajos Pequeños
+2025-11-30 22:35:10,364 - INFO - Ejecutando P1 (10/30) en Trabajos Pequeños
+2025-11-30 22:35:10,400 - INFO - Ejecutando P1 (11/30) en Trabajos Pequeños
+2025-11-30 22:35:10,440 - INFO - Ejecutando P1 (12/30) en Trabajos Pequeños
+2025-11-30 22:35:10,480 - INFO - Ejecutando P1 (13/30) en Trabajos Pequeños
+2025-11-30 22:35:10,521 - INFO - Ejecutando P1 (14/30) en Trabajos Pequeños
+2025-11-30 22:35:10,561 - INFO - Ejecutando P1 (15/30) en Trabajos Pequeños
+2025-11-30 22:35:10,601 - INFO - Ejecutando P1 (16/30) en Trabajos Pequeños
+2025-11-30 22:35:10,641 - INFO - Ejecutando P1 (17/30) en Trabajos Pequeños
+2025-11-30 22:35:10,681 - INFO - Ejecutando P1 (18/30) en Trabajos Pequeños
+2025-11-30 22:35:10,721 - INFO - Ejecutando P1 (19/30) en Trabajos Pequeños
+2025-11-30 22:35:10,761 - INFO - Ejecutando P1 (20/30) en Trabajos Pequeños
+2025-11-30 22:35:10,801 - INFO - Ejecutando P1 (21/30) en Trabajos Pequeños
+2025-11-30 22:35:10,842 - INFO - Ejecutando P1 (22/30) en Trabajos Pequeños
+2025-11-30 22:35:10,881 - INFO - Ejecutando P1 (23/30) en Trabajos Pequeños
+2025-11-30 22:35:10,921 - INFO - Ejecutando P1 (24/30) en Trabajos Pequeños
+2025-11-30 22:35:10,961 - INFO - Ejecutando P1 (25/30) en Trabajos Pequeños
+2025-11-30 22:35:11,002 - INFO - Ejecutando P1 (26/30) en Trabajos Pequeños
+2025-11-30 22:35:11,045 - INFO - Ejecutando P1 (27/30) en Trabajos Pequeños
+2025-11-30 22:35:11,083 - INFO - Ejecutando P1 (28/30) en Trabajos Pequeños
+2025-11-30 22:35:11,125 - INFO - Ejecutando P1 (29/30) en Trabajos Pequeños
+2025-11-30 22:35:11,166 - INFO - Ejecutando P1 (30/30) en Trabajos Pequeños
+2025-11-30 22:35:11,174 - INFO - Partición Trabajos Pequeños liberada por P1
+2025-11-30 22:35:11,174 - INFO - Finalizado P1

@@ -48,7 +48,7 @@ class Proceso:
     tamano: int
     arribo: int
     irrupcion: int
-    t_memoria: int
+    t_memoria: int = 0
     estado: str = ESTADO_NUEVO
     particion_asignada: str = None
 
@@ -215,7 +215,6 @@ def main_loop():
         print("Cargue un archivo primero.")
         return
 
-    # Inicializamos tiempos de inicio y fin de cada proceso
     for p in ColaProcesos:
         p.tiempo_inicio = None
         p.tiempo_fin = None
@@ -237,7 +236,7 @@ def main_loop():
                     gradoMultiProgr += 1
                     if p.tiempo_inicio is None:
                         p.tiempo_inicio = tiempo_actual
-                    break  # solo uno por ciclo
+                    break
 
         # ---------------- LLEGADA DE NUEVOS PROCESOS ----------------
         for p in list(ColaProcesos):
@@ -255,21 +254,18 @@ def main_loop():
                         eventos.append(f"Llega {p.nombre} -> Suspendido por memoria")
                     gradoMultiProgr += 1
                     ColaProcesos.remove(p)
-                    break  # solo un proceso por ciclo
+                    break
                 else:
                     eventos.append(f"Llega {p.nombre} -> Esperando (límite MP)")
 
-        # ---------------- EJECUCIÓN SRTF ----------------
+        # ---------------- SELECCIÓN SRTF ----------------
         proceso_actual = obtener_proceso_srtf()
+        
         for p in ColaListo:
             p.estado = ESTADO_LISTO
 
         if proceso_actual:
             proceso_actual.estado = ESTADO_EJECUCION
-            proceso_actual.t_memoria += 1
-            logging.info("Ejecutando %s (%d/%d) en %s",
-                         proceso_actual.nombre, proceso_actual.t_memoria,
-                         proceso_actual.irrupcion, proceso_actual.particion_asignada)
 
         # ---------------- MENSAJE DE EVENTO ----------------
         if eventos:
@@ -279,28 +275,41 @@ def main_loop():
         else:
             mensaje = "Esperando procesos..."
 
-        # ---------------- MOSTRAR TABLA ----------------
+        # ---------------- MOSTRAR TABLA (PRIMERO MOSTRAMOS) ----------------
         mostrar_tabla(tiempo_actual, mensaje)
 
-        # ---------------- FINALIZACIÓN DE PROCESOS ----------------
-        if proceso_actual and proceso_actual.t_memoria >= proceso_actual.irrupcion:
-            ColaListo.remove(proceso_actual)
-            ColaFinalizado.append(proceso_actual)
-            liberar_particion(proceso_actual)
-            proceso_actual.estado = ESTADO_FINALIZADO
-            proceso_actual.tiempo_fin = tiempo_actual + 1  # fin del proceso
-            logging.info("Finalizado %s", proceso_actual.nombre)
-            gradoMultiProgr -= 1
+        # ---------------- EJECUCIÓN REAL (DESPUÉS SUMAMOS) ----------------
+        if proceso_actual:
+            proceso_actual.t_memoria += 1 
+            
+            logging.info("Ejecutando %s (%d/%d) en %s",
+                         proceso_actual.nombre, proceso_actual.t_memoria,
+                         proceso_actual.irrupcion, proceso_actual.particion_asignada)
 
-            input(f"FIN DE PROCESO {proceso_actual.nombre} (Presione ENTER)")
+            if proceso_actual.t_memoria >= proceso_actual.irrupcion:
+                ColaListo.remove(proceso_actual)
+                ColaFinalizado.append(proceso_actual)
+                liberar_particion(proceso_actual)
+                proceso_actual.estado = ESTADO_FINALIZADO
+                proceso_actual.tiempo_fin = tiempo_actual + 1
+                logging.info("Finalizado %s", proceso_actual.nombre)
+                gradoMultiProgr -= 1
 
+                input(f"FIN DE PROCESO {proceso_actual.nombre} (Presione ENTER)")
+            else:
+                input("Presione ENTER para siguiente ciclo...")
         else:
-            input("Presione ENTER para siguiente ciclo...")
+            input("CPU Ociosa - Presione ENTER...")
 
         tiempo_actual += 1
 
+# ... (Aquí termina tu bucle while) ...
+    
     # ------------------- INFORME ESTADÍSTICO -------------------
     if ColaFinalizado:
+        # 1. LIMPIAR PANTALLA ANTES DEL INFORME
+        os.system('cls' if os.name == 'nt' else 'clear')
+        
         print("\n--- INFORME ESTADÍSTICO ---")
         total_retorno = 0
         total_espera = 0
@@ -324,7 +333,8 @@ def main_loop():
         print(f"Rendimiento del sistema : {rendimiento:.2f} trabajos por unidad de tiempo")
     else:
         print("No se ejecutaron procesos.")
-    input("Presione ENTER para volver al menú...")
+    
+    input("\nPresione ENTER para volver al menú...")
 
 # ------------------- CARGA DE PROCESOS -------------------
 def cargar_lista_procesos():
@@ -357,7 +367,7 @@ def cargar_lista_procesos():
             if not item.strip():
                 continue
             elemento = item.split("-")
-            if len(elemento) < 6:
+            if len(elemento) < 5:
                 continue
 
             ColaProcesos.append(
@@ -366,8 +376,7 @@ def cargar_lista_procesos():
                     nombre=elemento[1],
                     tamano=int(elemento[2]),
                     arribo=int(elemento[3]),
-                    irrupcion=int(elemento[4]),
-                    t_memoria=int(elemento[5])
+                    irrupcion=int(elemento[4])
                 )
             )
         logging.info("Lista de procesos cargada: %s", [p.nombre for p in ColaProcesos])

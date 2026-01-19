@@ -283,8 +283,8 @@ def main_loop():
             proceso_actual.t_memoria += 1 
             
             logging.info("Ejecutando %s (%d/%d) en %s",
-                         proceso_actual.nombre, proceso_actual.t_memoria,
-                         proceso_actual.irrupcion, proceso_actual.particion_asignada)
+                        proceso_actual.nombre, proceso_actual.t_memoria,
+                        proceso_actual.irrupcion, proceso_actual.particion_asignada)
 
             if proceso_actual.t_memoria >= proceso_actual.irrupcion:
                 ColaListo.remove(proceso_actual)
@@ -362,12 +362,22 @@ def cargar_lista_procesos():
             items = contenido.strip().split("\n")
         else:
             items = contenido.strip().split("*")
+        
+        procesos_validos = []
+        procesos_rechazados = []
+        max_tam = 250
 
         for item in items:
             if not item.strip():
                 continue
             elemento = item.split("-")
             if len(elemento) < 5:
+                continue
+
+            tamano = int(elemento[2])
+            if tamano > max_tam:
+                procesos_rechazados.append(elemento[1])
+                print(f"Proceso {elemento[1]} rechazado: tamaño {tamano} excede el maximo({max_tam})")
                 continue
 
             ColaProcesos.append(

@@ -1,131 +1,52 @@
-2026-01-19 13:55:45,513 - INFO - --- SIMULACIÓN REINICIADA ---
-2026-01-19 13:55:48,655 - INFO - Lista de procesos cargada: ['A1', 'A2', 'A3', 'A4', 'A6', 'A7', 'A8', 'A9', 'A10']
-2026-01-19 13:56:34,343 - INFO - Proceso A1 asignado a Trabajos Pequeños (fragmentación 0)
-2026-01-19 13:56:34,363 - INFO - Ejecutando A1 (1/12) en Trabajos Pequeños
-2026-01-19 13:56:36,422 - INFO - Proceso A2 asignado a Trabajos Medianos (fragmentación 30)
-2026-01-19 13:56:36,444 - INFO - Ejecutando A2 (1/9) en Trabajos Medianos
-2026-01-19 13:56:37,781 - INFO - Proceso A3 asignado a Trabajos Grandes (fragmentación 101)
-2026-01-19 13:56:37,800 - INFO - Ejecutando A2 (2/9) en Trabajos Medianos
-2026-01-19 13:56:38,432 - DEBUG - No se encontró partición para A4
-2026-01-19 13:56:38,488 - INFO - Ejecutando A2 (3/9) en Trabajos Medianos
-2026-01-19 13:56:39,193 - DEBUG - No se encontró partición para A4
-2026-01-19 13:56:39,213 - INFO - Ejecutando A2 (4/9) en Trabajos Medianos
-2026-01-19 13:56:39,779 - DEBUG - No se encontró partición para A4
-2026-01-19 13:56:39,804 - INFO - Ejecutando A2 (5/9) en Trabajos Medianos
-2026-01-19 13:56:40,169 - DEBUG - No se encontró partición para A4
-2026-01-19 13:56:40,190 - INFO - Ejecutando A2 (6/9) en Trabajos Medianos
-2026-01-19 13:56:40,516 - DEBUG - No se encontró partición para A4
-2026-01-19 13:56:40,516 - DEBUG - No se encontró partición para A6
-2026-01-19 13:56:40,536 - INFO - Ejecutando A2 (7/9) en Trabajos Medianos
-2026-01-19 13:56:41,099 - INFO - Ejecutando A2 (8/9) en Trabajos Medianos
-2026-01-19 13:56:41,654 - INFO - Ejecutando A2 (9/9) en Trabajos Medianos
-2026-01-19 13:56:41,655 - INFO - Partición Trabajos Medianos liberada por A2
-2026-01-19 13:56:41,655 - INFO - Finalizado A2
-2026-01-19 13:56:49,362 - INFO - Proceso A4 asignado a Trabajos Medianos (fragmentación 99)
-2026-01-19 13:56:49,386 - INFO - Ejecutando A4 (1/5) en Trabajos Medianos
-2026-01-19 13:56:51,376 - DEBUG - No se encontró partición para A6
-2026-01-19 13:56:51,376 - DEBUG - No se encontró partición para A7
-2026-01-19 13:56:51,396 - INFO - Ejecutando A4 (2/5) en Trabajos Medianos
-2026-01-19 13:56:54,003 - INFO - Ejecutando A4 (3/5) en Trabajos Medianos
-2026-01-19 13:56:55,072 - INFO - Ejecutando A4 (4/5) en Trabajos Medianos
-2026-01-19 13:56:55,965 - INFO - Ejecutando A4 (5/5) en Trabajos Medianos
-2026-01-19 13:56:55,965 - INFO - Partición Trabajos Medianos liberada por A4
-2026-01-19 13:56:55,965 - INFO - Finalizado A4
-2026-01-19 13:57:00,745 - INFO - Proceso A6 asignado a Trabajos Medianos (fragmentación 70)
-2026-01-19 13:57:00,766 - INFO - Ejecutando A6 (1/6) en Trabajos Medianos
-2026-01-19 13:57:05,729 - DEBUG - No se encontró partición para A7
-2026-01-19 13:57:05,729 - DEBUG - No se encontró partición para A8
-2026-01-19 13:57:05,751 - INFO - Ejecutando A6 (2/6) en Trabajos Medianos
-2026-01-19 13:57:06,690 - INFO - Ejecutando A6 (3/6) en Trabajos Medianos
-2026-01-19 13:57:07,373 - INFO - Ejecutando A6 (4/6) en Trabajos Medianos
-2026-01-19 13:57:07,961 - INFO - Ejecutando A6 (5/6) en Trabajos Medianos
-2026-01-19 13:57:08,379 - INFO - Ejecutando A6 (6/6) en Trabajos Medianos
-2026-01-19 13:57:08,379 - INFO - Partición Trabajos Medianos liberada por A6
-2026-01-19 13:57:08,379 - INFO - Finalizado A6
-2026-01-19 13:57:08,740 - INFO - Proceso A7 asignado a Trabajos Medianos (fragmentación 0)
-2026-01-19 13:57:08,763 - INFO - Ejecutando A3 (1/8) en Trabajos Grandes
-2026-01-19 13:57:10,094 - DEBUG - No se encontró partición para A8
-2026-01-19 13:57:10,094 - DEBUG - No se encontró partición para A9
-2026-01-19 13:57:10,112 - INFO - Ejecutando A3 (2/8) en Trabajos Grandes
-2026-01-19 13:57:10,875 - INFO - Ejecutando A3 (3/8) en Trabajos Grandes
-2026-01-19 13:57:11,614 - INFO - Ejecutando A3 (4/8) en Trabajos Grandes
-2026-01-19 13:57:12,005 - INFO - Ejecutando A3 (5/8) en Trabajos Grandes
-2026-01-19 13:57:12,650 - INFO - Ejecutando A3 (6/8) en Trabajos Grandes
-2026-01-19 13:57:14,577 - INFO - Ejecutando A3 (7/8) en Trabajos Grandes
-2026-01-19 13:57:15,443 - INFO - Ejecutando A3 (8/8) en Trabajos Grandes
-2026-01-19 13:57:15,443 - INFO - Partición Trabajos Grandes liberada por A3
-2026-01-19 13:57:15,443 - INFO - Finalizado A3
-2026-01-19 13:57:16,505 - INFO - Proceso A8 asignado a Trabajos Grandes (fragmentación 2)
-2026-01-19 13:57:16,532 - INFO - Ejecutando A7 (1/10) en Trabajos Medianos
-2026-01-19 13:57:18,744 - DEBUG - No se encontró partición para A9
-2026-01-19 13:57:18,745 - DEBUG - No se encontró partición para A10
-2026-01-19 13:57:18,772 - INFO - Ejecutando A7 (2/10) en Trabajos Medianos
-2026-01-19 13:57:19,725 - INFO - Ejecutando A7 (3/10) en Trabajos Medianos
-2026-01-19 13:57:20,328 - INFO - Ejecutando A7 (4/10) en Trabajos Medianos
-2026-01-19 13:57:20,803 - INFO - Ejecutando A7 (5/10) en Trabajos Medianos
-2026-01-19 13:57:21,453 - INFO - Ejecutando A7 (6/10) en Trabajos Medianos
-2026-01-19 13:57:21,996 - INFO - Ejecutando A7 (7/10) en Trabajos Medianos
-2026-01-19 13:57:22,436 - INFO - Ejecutando A7 (8/10) en Trabajos Medianos
-2026-01-19 13:57:22,846 - INFO - Ejecutando A7 (9/10) en Trabajos Medianos
-2026-01-19 13:57:23,544 - INFO - Ejecutando A7 (10/10) en Trabajos Medianos
-2026-01-19 13:57:23,545 - INFO - Partición Trabajos Medianos liberada por A7
-2026-01-19 13:57:23,545 - INFO - Finalizado A7
-2026-01-19 13:57:24,105 - INFO - Proceso A9 asignado a Trabajos Medianos (fragmentación 90)
-2026-01-19 13:57:24,127 - INFO - Ejecutando A9 (1/5) en Trabajos Medianos
-2026-01-19 13:57:24,754 - DEBUG - No se encontró partición para A10
-2026-01-19 13:57:24,776 - INFO - Ejecutando A9 (2/5) en Trabajos Medianos
-2026-01-19 13:57:25,265 - DEBUG - No se encontró partición para A10
-2026-01-19 13:57:25,288 - INFO - Ejecutando A9 (3/5) en Trabajos Medianos
-2026-01-19 13:57:25,811 - DEBUG - No se encontró partición para A10
-2026-01-19 13:57:25,837 - INFO - Ejecutando A9 (4/5) en Trabajos Medianos
-2026-01-19 13:57:26,257 - DEBUG - No se encontró partición para A10
-2026-01-19 13:57:26,279 - INFO - Ejecutando A9 (5/5) en Trabajos Medianos
-2026-01-19 13:57:26,279 - INFO - Partición Trabajos Medianos liberada por A9
-2026-01-19 13:57:26,279 - INFO - Finalizado A9
-2026-01-19 13:57:26,795 - INFO - Proceso A10 asignado a Trabajos Medianos (fragmentación 20)
-2026-01-19 13:57:26,818 - INFO - Ejecutando A1 (2/12) en Trabajos Pequeños
-2026-01-19 13:57:27,277 - INFO - Ejecutando A1 (3/12) en Trabajos Pequeños
-2026-01-19 13:57:27,681 - INFO - Ejecutando A1 (4/12) en Trabajos Pequeños
-2026-01-19 13:57:28,087 - INFO - Ejecutando A1 (5/12) en Trabajos Pequeños
-2026-01-19 13:57:28,491 - INFO - Ejecutando A1 (6/12) en Trabajos Pequeños
-2026-01-19 13:57:28,890 - INFO - Ejecutando A1 (7/12) en Trabajos Pequeños
-2026-01-19 13:57:29,263 - INFO - Ejecutando A1 (8/12) en Trabajos Pequeños
-2026-01-19 13:57:29,606 - INFO - Ejecutando A1 (9/12) en Trabajos Pequeños
-2026-01-19 13:57:29,934 - INFO - Ejecutando A1 (10/12) en Trabajos Pequeños
-2026-01-19 13:57:30,215 - INFO - Ejecutando A1 (11/12) en Trabajos Pequeños
-2026-01-19 13:57:30,474 - INFO - Ejecutando A1 (12/12) en Trabajos Pequeños
-2026-01-19 13:57:30,474 - INFO - Partición Trabajos Pequeños liberada por A1
-2026-01-19 13:57:30,475 - INFO - Finalizado A1
-2026-01-19 13:57:30,727 - INFO - Ejecutando A8 (1/14) en Trabajos Grandes
-2026-01-19 13:57:30,959 - INFO - Ejecutando A8 (2/14) en Trabajos Grandes
-2026-01-19 13:57:31,230 - INFO - Ejecutando A8 (3/14) en Trabajos Grandes
-2026-01-19 13:57:33,359 - INFO - Ejecutando A8 (4/14) en Trabajos Grandes
-2026-01-19 13:57:34,058 - INFO - Ejecutando A8 (5/14) en Trabajos Grandes
-2026-01-19 13:57:34,495 - INFO - Ejecutando A8 (6/14) en Trabajos Grandes
-2026-01-19 13:57:35,354 - INFO - Ejecutando A8 (7/14) en Trabajos Grandes
-2026-01-19 13:57:35,738 - INFO - Ejecutando A8 (8/14) en Trabajos Grandes
-2026-01-19 13:57:36,104 - INFO - Ejecutando A8 (9/14) en Trabajos Grandes
-2026-01-19 13:57:36,395 - INFO - Ejecutando A8 (10/14) en Trabajos Grandes
-2026-01-19 13:57:36,719 - INFO - Ejecutando A8 (11/14) en Trabajos Grandes
-2026-01-19 13:57:37,046 - INFO - Ejecutando A8 (12/14) en Trabajos Grandes
-2026-01-19 13:57:37,357 - INFO - Ejecutando A8 (13/14) en Trabajos Grandes
-2026-01-19 13:57:37,685 - INFO - Ejecutando A8 (14/14) en Trabajos Grandes
-2026-01-19 13:57:37,685 - INFO - Partición Trabajos Grandes liberada por A8
-2026-01-19 13:57:37,686 - INFO - Finalizado A8
-2026-01-19 13:57:38,014 - INFO - Ejecutando A10 (1/15) en Trabajos Medianos
-2026-01-19 13:57:38,928 - INFO - Ejecutando A10 (2/15) en Trabajos Medianos
-2026-01-19 13:57:41,271 - INFO - Ejecutando A10 (3/15) en Trabajos Medianos
-2026-01-19 13:57:41,835 - INFO - Ejecutando A10 (4/15) en Trabajos Medianos
-2026-01-19 13:57:42,274 - INFO - Ejecutando A10 (5/15) en Trabajos Medianos
-2026-01-19 13:57:43,084 - INFO - Ejecutando A10 (6/15) en Trabajos Medianos
-2026-01-19 13:57:43,529 - INFO - Ejecutando A10 (7/15) en Trabajos Medianos
-2026-01-19 13:57:44,560 - INFO - Ejecutando A10 (8/15) en Trabajos Medianos
-2026-01-19 13:57:44,940 - INFO - Ejecutando A10 (9/15) en Trabajos Medianos
-2026-01-19 13:57:45,249 - INFO - Ejecutando A10 (10/15) en Trabajos Medianos
-2026-01-19 13:57:45,539 - INFO - Ejecutando A10 (11/15) en Trabajos Medianos
-2026-01-19 13:57:47,686 - INFO - Ejecutando A10 (12/15) en Trabajos Medianos
-2026-01-19 13:57:48,124 - INFO - Ejecutando A10 (13/15) en Trabajos Medianos
-2026-01-19 13:57:48,525 - INFO - Ejecutando A10 (14/15) en Trabajos Medianos
-2026-01-19 13:57:49,204 - INFO - Ejecutando A10 (15/15) en Trabajos Medianos
-2026-01-19 13:57:49,204 - INFO - Partición Trabajos Medianos liberada por A10
-2026-01-19 13:57:49,205 - INFO - Finalizado A10
+2026-02-05 21:09:26,414 - INFO - --- SIMULACIÓN REINICIADA ---
+2026-02-05 21:09:36,281 - INFO - Lista de procesos cargada: ['A1', 'A2', 'A3', 'A4', 'A6', 'A7', 'A8', 'A9', 'A10']
+2026-02-05 21:09:41,684 - INFO - Proceso A1 asignado a Trabajos Pequeños (fragmentación 0)
+2026-02-05 21:09:41,707 - INFO - Ejecutando A1 (1/12) en Trabajos Pequeños
+2026-02-05 21:10:01,602 - INFO - Proceso A2 asignado a Trabajos Medianos (fragmentación 30)
+2026-02-05 21:10:01,621 - INFO - Ejecutando A2 (1/9) en Trabajos Medianos
+2026-02-05 21:10:03,278 - INFO - Proceso A3 asignado a Trabajos Grandes (fragmentación 101)
+2026-02-05 21:10:03,298 - INFO - Ejecutando A2 (2/9) en Trabajos Medianos
+2026-02-05 21:10:04,220 - DEBUG - No se encontró partición para A4
+2026-02-05 21:10:04,249 - INFO - Ejecutando A2 (3/9) en Trabajos Medianos
+2026-02-05 21:10:04,824 - DEBUG - No se encontró partición para A4
+2026-02-05 21:10:04,853 - INFO - Ejecutando A2 (4/9) en Trabajos Medianos
+2026-02-05 21:10:05,207 - DEBUG - No se encontró partición para A4
+2026-02-05 21:10:05,236 - INFO - Ejecutando A2 (5/9) en Trabajos Medianos
+2026-02-05 21:10:05,621 - DEBUG - No se encontró partición para A4
+2026-02-05 21:10:05,651 - INFO - Ejecutando A2 (6/9) en Trabajos Medianos
+2026-02-05 21:10:05,935 - DEBUG - No se encontró partición para A4
+2026-02-05 21:10:05,935 - DEBUG - No se encontró partición para A6
+2026-02-05 21:10:05,958 - INFO - Ejecutando A2 (7/9) en Trabajos Medianos
+2026-02-05 21:10:06,325 - INFO - Ejecutando A2 (8/9) en Trabajos Medianos
+2026-02-05 21:10:06,750 - INFO - Ejecutando A2 (9/9) en Trabajos Medianos
+2026-02-05 21:10:06,751 - INFO - Partición Trabajos Medianos liberada por A2
+2026-02-05 21:10:06,751 - INFO - Finalizado A2
+2026-02-05 21:10:07,098 - INFO - Proceso A4 asignado a Trabajos Medianos (fragmentación 99)
+2026-02-05 21:10:07,128 - INFO - Ejecutando A4 (1/5) en Trabajos Medianos
+2026-02-05 21:10:07,752 - DEBUG - No se encontró partición para A6
+2026-02-05 21:10:07,752 - DEBUG - No se encontró partición para A7
+2026-02-05 21:10:07,780 - INFO - Ejecutando A4 (2/5) en Trabajos Medianos
+2026-02-05 21:12:58,681 - INFO - Ejecutando A4 (3/5) en Trabajos Medianos
+2026-02-05 21:12:58,961 - INFO - Ejecutando A4 (4/5) en Trabajos Medianos
+2026-02-05 21:12:59,365 - INFO - Ejecutando A4 (5/5) en Trabajos Medianos
+2026-02-05 21:12:59,366 - INFO - Partición Trabajos Medianos liberada por A4
+2026-02-05 21:12:59,366 - INFO - Finalizado A4
+2026-02-05 21:13:00,259 - INFO - Proceso A6 asignado a Trabajos Medianos (fragmentación 70)
+2026-02-05 21:13:00,280 - INFO - Ejecutando A6 (1/6) en Trabajos Medianos
+2026-02-05 21:13:00,496 - DEBUG - No se encontró partición para A7
+2026-02-05 21:13:00,496 - DEBUG - No se encontró partición para A8
+2026-02-05 21:13:00,519 - INFO - Ejecutando A6 (2/6) en Trabajos Medianos
+2026-02-05 21:13:00,684 - INFO - Ejecutando A6 (3/6) en Trabajos Medianos
+2026-02-05 21:13:00,861 - INFO - Ejecutando A6 (4/6) en Trabajos Medianos
+2026-02-05 21:13:01,031 - INFO - Ejecutando A6 (5/6) en Trabajos Medianos
+2026-02-05 21:13:01,251 - INFO - Ejecutando A6 (6/6) en Trabajos Medianos
+2026-02-05 21:13:01,251 - INFO - Partición Trabajos Medianos liberada por A6
+2026-02-05 21:13:01,251 - INFO - Finalizado A6
+2026-02-05 21:13:01,556 - INFO - Proceso A7 asignado a Trabajos Medianos (fragmentación 0)
+2026-02-05 21:13:01,574 - INFO - Ejecutando A3 (1/8) en Trabajos Grandes
+2026-02-05 21:13:01,805 - DEBUG - No se encontró partición para A8
+2026-02-05 21:13:01,805 - DEBUG - No se encontró partición para A9
+2026-02-05 21:13:01,830 - INFO - Ejecutando A3 (2/8) en Trabajos Grandes
+2026-02-05 21:13:02,034 - INFO - Ejecutando A3 (3/8) en Trabajos Grandes
+2026-02-05 21:13:02,245 - INFO - Ejecutando A3 (4/8) en Trabajos Grandes
+2026-02-05 21:13:02,363 - INFO - Ejecutando A3 (5/8) en Trabajos Grandes

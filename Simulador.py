@@ -12,7 +12,6 @@ logger.setLevel(logging.DEBUG)
 
 if logger.hasHandlers():
     logger.handlers.clear()
-# Handler para archivo
 file_handler = logging.FileHandler("simulacion.log", mode="w")
 file_handler.setLevel(logging.DEBUG)
 file_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
@@ -122,11 +121,6 @@ def liberar_particion(proceso):
 
 # ------------------- LOCALIZACION -------------------
 def estado_localizacion(proceso):
-    """
-    Intenta asignar memoria a un proceso.
-    Devuelve True si se asignó a memoria.
-    NO mueve a suspendido aquí.
-    """
     if best_fit(proceso):
         return True
     return False
@@ -302,12 +296,9 @@ def main_loop():
             input("CPU Ociosa - Presione ENTER...")
 
         tiempo_actual += 1
-
-# ... (Aquí termina tu bucle while) ...
     
     # ------------------- INFORME ESTADÍSTICO -------------------
     if ColaFinalizado:
-        # 1. LIMPIAR PANTALLA ANTES DEL INFORME
         os.system('cls' if os.name == 'nt' else 'clear')
         
         print("\n--- INFORME ESTADÍSTICO ---")
